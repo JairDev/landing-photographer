@@ -18,17 +18,19 @@ $colors: (
   "accent": #c16854,
   "accent-dark": #49271f,
   "primary-text": #24423b,
+  "back-portfolio": #ecb390,
+  "back-input": #fdf4e8,
 );
 
-$font-family: (
-  "font-family": "Poppins",
-);
+// $font-family: (
+//   "font-family": "Poppins", sans-serif
+// );
 
 $font-size: (
-  "title": calc(3em + 1.5vw),
-  "subtitle": calc(1.5em + 1vw),
+  "title": calc(3.2em + 1.5vw),
+  "subtitle": calc(1.8em + 1vw),
   "main-font": calc(1em + 0.7vw),
-  "small-text": calc(0.8em + 0.5vw),
+  "small-text": calc(0.9em + 0.5vw),
   "header-card": calc(1.5em + 0.8vw),
   "line-height": 35px,
 );
@@ -47,6 +49,7 @@ body {
 
 .App-header {
   padding-top: 3vh;
+  opacity: 0;
   & .App-nav-content-links {
     display: flex;
     width: 100%;
@@ -55,7 +58,20 @@ body {
 }
 
 .App-hero {
-  padding-top: 6vh;
+  // padding-top: 6vh;
+  height: 100vh;
+  & .App-hero-content {
+    height: 100%;
+    & .App-hero-content-info-action {
+      height: 100%;
+      & .App-hero-info {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+    }
+  }
 }
 
 .container-header-hero {
@@ -63,27 +79,31 @@ body {
 }
 
 .App-info {
-  color: map-get($colors, "primary-text" );
+  color: map-get($colors, "primary-text");
   & h1,
   h2,
   h6 {
-    padding-top: 2vh;
+    padding-top: 1vh;
   }
   & .App-hero-role {
     font-size: map-get($font-size, "title");
+    font-weight: 600;
   }
 
   & .App-hero-name {
     font-size: map-get($font-size, "subtitle");
+    font-weight: 500;
   }
 
   & .App-hero-capture {
     font-size: map-get($font-size, "small-text");
+    font-weight: 400;
   }
 }
 
 .App-action {
-  padding-top: 1vh;
+  // padding-top: 1vh;
+  padding-bottom: 10vh;
   & .content-button-contact {
     display: flex;
     justify-content: flex-end;
@@ -93,19 +113,29 @@ body {
       background: none;
       background-color: map-get($colors, "accent-light");
       border-radius: 50px;
+      color: map-get($colors, "primary-text");
       font-size: map-get($font-size, "main-font");
-      padding: 2vh 8vw;
+      font-weight: 600;
+      padding: 2vh 12vw;
     }
   }
 }
 
 .App-hero-content-image {
-  transform: translate(-60%, 5%);
+  & .content-image {
+    position: absolute;
+    top: 351px;
+    left: 0;
+    transform: scale(1.8);
+    & img {
+      width: 100%;
+    }
+  }
 }
 
 .App-about-me {
   background-color: map-get($colors, "complementary-light");
-  padding: 20vh 0;
+  padding: 10vh 0 40vh 0;
   & .App-about-me-content {
     & .App-about-me-header {
       display: flex;
@@ -113,20 +143,28 @@ body {
 
       & .App-about-me-photo {
         padding-top: 10vh;
+        transform: scale(0.8);
       }
 
-      & .App-about-me-title h1 {
-        color: map-get($colors, "primary-text");
-        font-size: map-get($font-size, "title");
-    
+      & .App-about-me-title {
+        text-align: end;
+        & h1 {
+          color: map-get($colors, "primary-text");
+          font-size: map-get($font-size, "title");
+          font-weight: 600;
+          letter-spacing: 1px;
+        }
       }
     }
     & .about-me-info {
-      padding-top: 15vh;
+      padding-top: 10vh;
       & p {
+        color: map-get($colors, "primary-text");
         margin-top: 4vh;
         font-size: map-get($font-size, "main-font");
         line-height: map-get($font-size, "line-height");
+        letter-spacing: 1px;
+        font-weight: 500;
       }
     }
     & .about-me-title-portfolio {
@@ -136,30 +174,35 @@ body {
       color: map-get($colors, "primary-light");
       display: flex;
       justify-content: center;
-      padding: 5vh 0;
+      padding: 2vh 0;
       margin-top: 20vh;
-      transform: translateX(15%);
+      transform: translateX(5%);
     }
 
     & .about-me-title-portfolio h1 {
       font-size: map-get($font-size, "title");
+      font-weight: 600;
+      letter-spacing: 1px;
     }
   }
 }
 
 .App-portfolio {
+  background-color: map-get($colors, "back-portfolio");
   & .App-portfolio-content-img-title {
-    transform: translateY(-20%);
+    transform: translate(-15%, -25%) scale(1.7);
   }
 
-  
   & .App-portfolio-content-img-title img {
     width: 100%;
   }
 }
 
 .App-portfolio-content-photos {
-  padding-top: 30vh;
+  transform: scale(0.8);
+  & .portfolio-content-photos {
+    margin-top: 2vh;
+  }
 }
 
 .portfolio-content-photos img {
@@ -173,15 +216,18 @@ body {
     color: map-get($colors, "primary-light");
     text-align: center;
     font-size: map-get($font-size, "title");
+    font-weight: 600;
+    letter-spacing: 1px;
   }
   .testimony {
     background: url("../../assets/card-paper.png");
     background-size: cover;
-    height: 55vh;
+    height: 60vh;
     padding: 8vh 6vw;
     margin-top: 4vh;
     & h4 {
       padding-top: 2vh;
+      text-align: center;
     }
   }
 }
@@ -195,16 +241,28 @@ body {
 
 .wrapper-service-footer {
   background: url("../../assets/back-services.png");
-  padding: 10vh 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: map-get($colors, "primary-text");
+  padding: 10vh 0 0 0;
+}
+
+.App-service-content-services {
+  padding-top: 10vh;
 }
 
 .App-service-content-title {
   text-align: center;
   & .service-content-title h1 {
     font-size: map-get($font-size, "title");
+    font-weight: 600;
+    letter-spacing: 1px;
   }
   & .service-content-title h4 {
     font-size: map-get($font-size, "main-font");
+    margin-top: 2vh;
+    font-weight: 500;
+    letter-spacing: 1px;
   }
 }
 
@@ -215,20 +273,88 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 4vh 0;
-  margin-top: 4vh;
+  padding: 6vh 0;
+  margin-top: 6vh;
   & .service-title {
-    padding-top: 4vh;
+    // padding-top: 4vh;
   }
   & .service-title h4 {
     font-size: map-get($font-size, "header-card");
+    font-weight: 500;
+    letter-spacing: 1px;
   }
   & ul li {
     padding: 2vh 2vw;
     margin-top: 4vh;
   }
+  & .content-price {
+    padding-top: 6vh;
+    p {
+      font-size: 22px;
+      font-weight: 600;
+    }
+  }
+  & .content-button-cita {
+    padding-top: 4vh;
+    & button {
+      border: none;
+      background: none;
+      border: 2px solid map-get($colors, "accent-light");
+      border-radius: 50px;
+      color: map-get($colors, "primary-text");
+      font-size: map-get($font-size, "main-font");
+      font-weight: 600;
+      padding: 2vh 12vw;
+    }
+  }
 }
 
 .App-contact {
   padding-top: 20vh;
+
+  .App-contact-content-title {
+    text-align: center;
+    & h1 {
+      font-size: map-get($font-size, "title");
+      font-weight: 500;
+    }
+  }
+
+  .content-input input,
+  .content-input textarea {
+    background-color: map-get($colors, "back-input");
+    border: 0px;
+    font-size: 17px;
+    padding: 1.5vh 3vw;
+    width: 100%;
+  }
+
+  .content-input div label {
+    display: block;
+    letter-spacing: 1px;
+    margin-bottom: 1vh;
+  }
+  .content-input div:not(div:first-child) {
+    // border: 2px solid red;
+    margin-top: 4vh;
+  }
+
+  .App-contact-content-form {
+    padding: 10vh 3vw;
+    .content-button-send-mail {
+      display: flex;
+      justify-content: center;
+      padding-top: 5vh;
+      & button {
+        border: none;
+        background: none;
+        background-color: map-get($colors, "accent-light");
+        border-radius: 50px;
+        color: map-get($colors, "primary-text");
+        font-size: map-get($font-size, "main-font");
+        font-weight: 600;
+        padding: 2vh 12vw;
+      }
+    }
+  }
 }

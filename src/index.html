@@ -5,6 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Martino Vizcays</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
   </head>
   <body>
     <div class="view">
@@ -87,7 +93,7 @@
         <section class="App-testimony">
           <div class="App-testimony-content space-style">
             <div class="App-testimony-header">
-              <h1>Clientes satisfechos</h1>
+              <h1>Momentos capturados</h1>
             </div>
             <div class="App-testimony-clients"></div>
           </div>
@@ -115,12 +121,21 @@
               <div class="App-contact-content-form">
                 <form action="">
                   <div class="content-input">
-                    <input type="text" />
-                    <input type="text" />
-                    <textarea name="" id="" cols="20" rows="10"></textarea>
+                    <div>
+                      <label for="">Nombre</label>
+                      <input type="text" placeholder="E.g Jhon Doe" />
+                    </div>
+                    <div>
+                      <label for="">Correo elecrónico</label>
+                      <input type="text" placeholder="E.g jhon@gmail.com" />
+                    </div>
+                    <div>
+                      <label for="">Tu mensaje:</label>
+                      <textarea name="" id="" cols="20" rows="10"></textarea>
+                    </div>
                   </div>
                   <div class="content-button-send-mail">
-                    <button>Enviar</button>
+                      <button>Enviar</button>
                   </div>
                 </form>
               </div>
