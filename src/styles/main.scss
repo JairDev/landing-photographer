@@ -22,12 +22,8 @@ $colors: (
   "back-input": #fdf4e8,
 );
 
-// $font-family: (
-//   "font-family": "Poppins", sans-serif
-// );
-
 $font-size: (
-  "title": calc(3.2em + 1.5vw),
+  "title": calc(2vw + 5em),
   "subtitle": calc(1.8em + 1vw),
   "main-font": calc(1em + 0.7vw),
   "small-text": calc(0.9em + 0.5vw),
@@ -64,6 +60,8 @@ body {
     height: 100%;
     & .App-hero-content-info-action {
       height: 100%;
+      position: relative;
+      z-index: 100;
       & .App-hero-info {
         height: 100%;
         display: flex;
@@ -76,6 +74,8 @@ body {
 
 .container-header-hero {
   background: url("../../assets/back-paper-hero.png");
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .App-info {
@@ -102,7 +102,6 @@ body {
 }
 
 .App-action {
-  // padding-top: 1vh;
   padding-bottom: 10vh;
   & .content-button-contact {
     display: flex;
@@ -121,14 +120,27 @@ body {
   }
 }
 
+.App-hero-content {
+  // background: url("../../assets/photos-hero.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: bottom;
+}
+
 .App-hero-content-image {
   & .content-image {
-    position: absolute;
-    top: 351px;
-    left: 0;
-    transform: scale(1.8);
+    // position: absolute;
+    // top: 351px;
+    // left: 0;
+    // transform: scale(1.8);
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    transform: translateY(-100vh);
+    padding-top: 30vh;
     & img {
       width: 100%;
+      transform: scale(1.8);
     }
   }
 }
@@ -167,16 +179,19 @@ body {
         font-weight: 500;
       }
     }
-    & .about-me-title-portfolio {
-      // border: 2px solid red;
-      background: url("../../assets/rollo-portfolio.png");
-      background-size: cover;
-      color: map-get($colors, "primary-light");
-      display: flex;
-      justify-content: center;
-      padding: 2vh 0;
-      margin-top: 20vh;
-      transform: translateX(5%);
+    & .wrapper-title-portfolio {
+      // border: 1px solid blue;
+      position: relative;
+      & .about-me-title-portfolio {
+        background: url("../../assets/rollo-portfolio.png");
+        background-size: cover;
+        color: map-get($colors, "primary-light");
+        display: flex;
+        justify-content: center;
+        padding: 2vh 0;
+        margin-top: 20vh;
+        // transform: translateX(30%);
+      }
     }
 
     & .about-me-title-portfolio h1 {
@@ -212,6 +227,10 @@ body {
 .App-testimony {
   background-color: map-get($colors, "complementary-dark");
   padding: 10vh 0;
+
+  & .App-testimony-clients {
+    padding-top: 15vh;
+  }
   & .App-testimony-header h1 {
     color: map-get($colors, "primary-light");
     text-align: center;
@@ -222,12 +241,15 @@ body {
   .testimony {
     background: url("../../assets/card-paper.png");
     background-size: cover;
+    color: map-get($colors, "primary-text");
     height: 60vh;
     padding: 8vh 6vw;
-    margin-top: 4vh;
+    margin-top: 6vh;
     & h4 {
       padding-top: 2vh;
       text-align: center;
+      font-size: map-get($font-size, "header-card");
+      letter-spacing: 1px;
     }
   }
 }
@@ -236,6 +258,8 @@ body {
   padding-top: 4vh;
   & p {
     font-size: map-get($font-size, "main-font");
+    font-weight: 500;
+    letter-spacing: 1px;
   }
 }
 
@@ -267,7 +291,6 @@ body {
 }
 
 .service {
-  // border: 2px solid red;
   background-color: map-get($colors, "primary-light");
   border-radius: 4px;
   display: flex;
@@ -275,9 +298,6 @@ body {
   align-items: center;
   padding: 6vh 0;
   margin-top: 6vh;
-  & .service-title {
-    // padding-top: 4vh;
-  }
   & .service-title h4 {
     font-size: map-get($font-size, "header-card");
     font-weight: 500;
@@ -316,7 +336,7 @@ body {
     text-align: center;
     & h1 {
       font-size: map-get($font-size, "title");
-      font-weight: 500;
+      font-weight: 600;
     }
   }
 
@@ -335,7 +355,6 @@ body {
     margin-bottom: 1vh;
   }
   .content-input div:not(div:first-child) {
-    // border: 2px solid red;
     margin-top: 4vh;
   }
 
@@ -355,6 +374,205 @@ body {
         font-weight: 600;
         padding: 2vh 12vw;
       }
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  body {
+    border: 2px solid red;
+  }
+  .space-style {
+    padding: 0 10vw;
+  }
+
+  .App-hero-content {
+    background-position: top;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  body {
+    border: 2px solid blue;
+  }
+
+  .space-style {
+    padding: 0 4vw;
+  }
+
+  .App-info {
+    color: map-get($colors, "primary-text");
+    & h1,
+    h2,
+    h6 {
+      padding-top: 1vh;
+    }
+    & .App-hero-role {
+      font-size: 76.24px;
+      font-weight: 600;
+    }
+
+    & .App-hero-name {
+      font-size: 47.12px;
+      font-weight: 500;
+    }
+
+    & .App-hero-capture {
+      font-size: 18px;
+      font-weight: 400;
+    }
+  }
+
+  .App-hero-content-image {
+    & .content-image {
+      height: 100vh;
+      width: 100%;
+      position: relative;
+      transform: translateY(-110vh) translateX(10%);
+      padding-top: 0vh;
+      & img {
+        width: 100%;
+        transform: scale(0.8);
+      }
+    }
+  }
+
+  .App-hero {
+    // padding-top: 6vh;
+    height: 100vh;
+    & .App-hero-content {
+      height: 100%;
+      & .App-hero-content-info-action {
+        height: 100%;
+        & .App-hero-info {
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+          align-items: flex-start;
+          width: 40vw;
+          height: auto;
+          padding-top: 10vh;
+          position: relative;
+          z-index: 100;
+        }
+      }
+    }
+  }
+
+  .App-action {
+    padding-bottom: 10vh;
+    & .content-button-contact {
+      display: flex;
+      justify-content: flex-end;
+      padding-top: 5vh;
+      & button {
+        border: none;
+        background: none;
+        background-color: map-get($colors, "accent-light");
+        border-radius: 50px;
+        color: map-get($colors, "primary-text");
+        font-size: map-get($font-size, "main-font");
+        font-weight: 600;
+        padding: 2vh 4vw;
+      }
+    }
+  }
+
+  .App-about-me {
+    background-color: map-get($colors, "complementary-light");
+    padding: 40vh 0 60vh 0;
+    & .App-about-me-content {
+      & .App-about-me-header {
+        display: flex;
+        flex-direction: column-reverse;
+
+        & .App-about-me-photo {
+          padding-top: 10vh;
+
+          & img {
+            transform: scale(1) rotate(-25deg);
+          }
+        }
+
+        & .App-about-me-title {
+          text-align: end;
+          & h1 {
+            color: map-get($colors, "primary-text");
+            font-size: 76.24px;
+            font-weight: 600;
+            letter-spacing: 1px;
+          }
+        }
+      }
+      & .about-me-info {
+        padding: 10vh 25vw 10vh 2vw;
+        & p {
+          color: map-get($colors, "primary-text");
+          margin-top: 6vh;
+          font-size: map-get($font-size, "main-font");
+          line-height: map-get($font-size, "line-height");
+          letter-spacing: 1px;
+          font-weight: 500;
+        }
+      }
+      & .wrapper-title-portfolio {
+        // border: 1px solid blue;
+        display: flex;
+        justify-content: flex-end;
+        position: relative;
+        & .about-me-title-portfolio {
+          background: url("../../assets/rollo-portfolio.png");
+          background-size: cover;
+          color: map-get($colors, "primary-light");
+          display: flex;
+          justify-content: center;
+          padding: 4vh 0;
+          margin-top: 20vh;
+          width: 40vw;
+        }
+      }
+
+      & .about-me-title-portfolio h1 {
+        font-size: 76.24px;
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
+    }
+  }
+
+  .App-portfolio {
+    background-color: map-get($colors, "back-portfolio");
+    & .App-portfolio-content-img-title {
+      transform: translate(-15%, -25%) scale(1);
+    }
+
+    & .App-portfolio-content-img-title img {
+      width: 100%;
+    }
+  }
+
+  .App-portfolio-content-photos {
+    transform: scale(0.9);
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-column-gap: 7vw;
+    grid-row-gap: 15vh;
+    & .portfolio-content-photos:nth-child(2n + 1) {
+      // margin-top: 2vh;
+      // border: 2px solid red;
+      transform: rotate(4deg) translateY(-20%);
+    }
+
+    & .portfolio-content-photos:nth-child(2n + 2) {
+      // margin-top: 2vh;
+      // border: 2px solid rgb(12, 61, 221);
+      transform: rotate(-3deg) scale(.6);
+    }
+
+    & .portfolio-content-photos:nth-child(2n + 3) {
+      // margin-top: 2vh;
+      // border: 2px solid rgb(12, 61, 221);
+      transform: rotate(-3deg) scale(1.2);
     }
   }
 }
