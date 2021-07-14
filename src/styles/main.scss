@@ -1,0 +1,234 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+li {
+  list-style: none;
+}
+
+$colors: (
+  "primary-light": #fcf8e8,
+  "primary": #dad6c5,
+  "primary-dark": #2e2914,
+  "complementary-light": #d4e2d4,
+  "complementary": #b5c2b5,
+  "complementary-dark": #374237,
+  "accent-light": #df7861,
+  "accent": #c16854,
+  "accent-dark": #49271f,
+  "primary-text": #24423b,
+);
+
+$font-family: (
+  "font-family": "Poppins",
+);
+
+$font-size: (
+  "title": calc(3em + 1.5vw),
+  "subtitle": calc(1.5em + 1vw),
+  "main-font": calc(1em + 0.7vw),
+  "small-text": calc(0.8em + 0.5vw),
+  "header-card": calc(1.5em + 0.8vw),
+  "line-height": 35px,
+);
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  overflow: hidden;
+}
+
+.space-style {
+  padding: 0 4vw;
+}
+
+.App-header {
+  padding-top: 3vh;
+  & .App-nav-content-links {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+  }
+}
+
+.App-hero {
+  padding-top: 6vh;
+}
+
+.container-header-hero {
+  background: url("../../assets/back-paper-hero.png");
+}
+
+.App-info {
+  color: map-get($colors, "primary-text" );
+  & h1,
+  h2,
+  h6 {
+    padding-top: 2vh;
+  }
+  & .App-hero-role {
+    font-size: map-get($font-size, "title");
+  }
+
+  & .App-hero-name {
+    font-size: map-get($font-size, "subtitle");
+  }
+
+  & .App-hero-capture {
+    font-size: map-get($font-size, "small-text");
+  }
+}
+
+.App-action {
+  padding-top: 1vh;
+  & .content-button-contact {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 5vh;
+    & button {
+      border: none;
+      background: none;
+      background-color: map-get($colors, "accent-light");
+      border-radius: 50px;
+      font-size: map-get($font-size, "main-font");
+      padding: 2vh 8vw;
+    }
+  }
+}
+
+.App-hero-content-image {
+  transform: translate(-60%, 5%);
+}
+
+.App-about-me {
+  background-color: map-get($colors, "complementary-light");
+  padding: 20vh 0;
+  & .App-about-me-content {
+    & .App-about-me-header {
+      display: flex;
+      flex-direction: column-reverse;
+
+      & .App-about-me-photo {
+        padding-top: 10vh;
+      }
+
+      & .App-about-me-title h1 {
+        color: map-get($colors, "primary-text");
+        font-size: map-get($font-size, "title");
+    
+      }
+    }
+    & .about-me-info {
+      padding-top: 15vh;
+      & p {
+        margin-top: 4vh;
+        font-size: map-get($font-size, "main-font");
+        line-height: map-get($font-size, "line-height");
+      }
+    }
+    & .about-me-title-portfolio {
+      // border: 2px solid red;
+      background: url("../../assets/rollo-portfolio.png");
+      background-size: cover;
+      color: map-get($colors, "primary-light");
+      display: flex;
+      justify-content: center;
+      padding: 5vh 0;
+      margin-top: 20vh;
+      transform: translateX(15%);
+    }
+
+    & .about-me-title-portfolio h1 {
+      font-size: map-get($font-size, "title");
+    }
+  }
+}
+
+.App-portfolio {
+  & .App-portfolio-content-img-title {
+    transform: translateY(-20%);
+  }
+
+  
+  & .App-portfolio-content-img-title img {
+    width: 100%;
+  }
+}
+
+.App-portfolio-content-photos {
+  padding-top: 30vh;
+}
+
+.portfolio-content-photos img {
+  width: 100%;
+}
+
+.App-testimony {
+  background-color: map-get($colors, "complementary-dark");
+  padding: 10vh 0;
+  & .App-testimony-header h1 {
+    color: map-get($colors, "primary-light");
+    text-align: center;
+    font-size: map-get($font-size, "title");
+  }
+  .testimony {
+    background: url("../../assets/card-paper.png");
+    background-size: cover;
+    height: 55vh;
+    padding: 8vh 6vw;
+    margin-top: 4vh;
+    & h4 {
+      padding-top: 2vh;
+    }
+  }
+}
+
+.testimony-content-testimony {
+  padding-top: 4vh;
+  & p {
+    font-size: map-get($font-size, "main-font");
+  }
+}
+
+.wrapper-service-footer {
+  background: url("../../assets/back-services.png");
+  padding: 10vh 0;
+}
+
+.App-service-content-title {
+  text-align: center;
+  & .service-content-title h1 {
+    font-size: map-get($font-size, "title");
+  }
+  & .service-content-title h4 {
+    font-size: map-get($font-size, "main-font");
+  }
+}
+
+.service {
+  // border: 2px solid red;
+  background-color: map-get($colors, "primary-light");
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 4vh 0;
+  margin-top: 4vh;
+  & .service-title {
+    padding-top: 4vh;
+  }
+  & .service-title h4 {
+    font-size: map-get($font-size, "header-card");
+  }
+  & ul li {
+    padding: 2vh 2vw;
+    margin-top: 4vh;
+  }
+}
+
+.App-contact {
+  padding-top: 20vh;
+}
