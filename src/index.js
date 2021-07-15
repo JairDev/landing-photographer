@@ -1,3 +1,6 @@
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+
 import "./styles/main.scss";
 import imagePortfolio1 from "../assets/photo1-port.png";
 import imagePortfolio2 from "../assets/photo2-port.png";
@@ -7,19 +10,22 @@ import imagePortfolio5 from "../assets/photo5-port.png";
 import imagePortfolio6 from "../assets/photo6-port.png";
 import imagePortfolio7 from "../assets/photo7-port.png";
 import paperCard from "../assets/card-paper.png";
+import paperCardPortfolio from "../assets/name-label.png";
+
+gsap.registerPlugin(ScrollTrigger);
 
 const portfolioNode = document.querySelector(".App-portfolio-content-photos");
 const testimonyNode = document.querySelector(".App-testimony-clients");
 const serviceNode = document.querySelector(".App-service-content-services");
 
 const dataPortfolio = [
-  imagePortfolio1,
-  imagePortfolio2,
-  imagePortfolio3,
-  imagePortfolio4,
-  imagePortfolio5,
-  imagePortfolio6,
-  imagePortfolio7,
+  { name: "Abigail", src: imagePortfolio1 },
+  { name: "Antonio", src: imagePortfolio2 },
+  { name: "Manuel y Jose", src: imagePortfolio3 },
+  { name: "Patricia", src: imagePortfolio4 },
+  { name: "Carolina", src: imagePortfolio5 },
+  { name: "Andres", src: imagePortfolio6 },
+  { name: "Grecia", src: imagePortfolio7 },
 ];
 
 const dataTestimony = [
@@ -72,11 +78,17 @@ const fragmentService = document.createDocumentFragment();
 
 dataPortfolio.forEach((photos) => {
   const div = document.createElement("div");
+  const divContentTitle = document.createElement("div");
+  const title = document.createElement("h6");
   const img = document.createElement("img");
   div.setAttribute("class", "portfolio-content-photos");
-  img.setAttribute("src", photos);
+  divContentTitle.setAttribute("class", "portfolio-content-paper");
+  title.textContent = photos.name;
+  img.setAttribute("src", photos.src);
   img.setAttribute("alt", "Fotografía de una persona");
   div.appendChild(img);
+  div.appendChild(divContentTitle);
+  divContentTitle.appendChild(title);
   fragmentPortfolio.appendChild(div);
 });
 
@@ -93,12 +105,11 @@ dataTestimony.forEach((testimony) => {
   testimonyText.textContent = testimony.testimony;
   nameClient.textContent = testimony.name;
   fragmentTestimony.appendChild(div);
-})
-
+});
 
 dataService.forEach((service, index) => {
   let priceFormat = `$${service.price}`;
-  let titleFormat = `${service.title}` + " " + `${index+1}`
+  let titleFormat = `${service.title}` + " " + `${index + 1}`;
   const div = document.createElement("div");
   const divContentTitle = document.createElement("div");
   const ulContentServices = document.createElement("ul");
@@ -132,3 +143,63 @@ dataService.forEach((service, index) => {
 portfolioNode.appendChild(fragmentPortfolio);
 testimonyNode.appendChild(fragmentTestimony);
 serviceNode.appendChild(fragmentService);
+
+window.addEventListener("load", (e) => {
+  const photo = document.getElementById("rotate-photo");
+  const header = document.getElementById("header-translate");
+
+  const tlHeader = gsap.timeline({
+    scrollTrigger: {
+      trigger: header,
+      start: "top 60%",
+      end: "10% 30%",
+      scrub: true,
+      // markers: true
+    },
+  });
+
+  const tlPhoto = gsap.timeline({
+    scrollTrigger: {
+      trigger: photo,
+      start: "-=170 60%",
+      end: "10% 50%",
+      scrub: true,
+      // markers: true
+    },
+  });
+  //animations////////////////////
+  if (window.innerWidth > 768) {
+    tlPhoto.to(photo, {
+      rotate: 10,
+      opacity: 1,
+      duration: 1,
+    });
+    tlHeader.to(header, {
+      yPercent: 300,
+      opacity: 1,
+      duration: 1,
+    });
+  }
+});
+
+let open = false;
+
+document.addEventListener("click", (e) => {
+  open = !open;
+  const menu = document.querySelector(".App-nav-links");
+  const buttonNavTarget = e.target.closest(".content-button-nav");
+  const buttonNavTargetOpen = document.querySelector(".open-icon");
+  const buttonNavTargetClose = document.querySelector(".close-icon");
+
+  if (buttonNavTarget) {
+    if (open) {
+      menu.classList.add("open");
+      buttonNavTargetOpen.classList.add("close")
+      buttonNavTargetClose.classList.add("open")
+    }else {
+      menu.classList.remove("open");
+      buttonNavTargetOpen.classList.remove("close")
+      buttonNavTargetClose.classList.remove("open")
+    }
+  }
+});

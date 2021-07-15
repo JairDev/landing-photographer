@@ -22,10 +22,18 @@
                 <ul class="App-nav-content-links">
                   <li class="nav-link">Sobre mí</li>
                   <li class="nav-link">Portafolio</li>
-                  <li class="nav-link">Paquetes</li>
+                  <li class="nav-link">Testimonios</li>
+                  <div class="content-li-border-bottom">
+                    <li class="nav-link">Paquetes</li>
+                     <img src="../assets/link-border-nav.png" alt=""> 
+                  </div>
                 </ul>
               </div>
             </nav>
+            <div class="content-button-nav">
+              <span class="iconify open-icon" data-inline="false" data-icon="bx:bx-menu-alt-right" style="font-size: 48px; color: #24423b;"></span>
+              <span class="iconify close-icon" data-inline="false" data-icon="eva:close-outline" style="font-size: 48px; color: #24423b;"></span>
+            </div>
           </header>
           <section class="App-hero">
             <div class="App-hero-content space-style">
@@ -48,17 +56,22 @@
                   <img src="../assets/photos-hero.png" alt="" />
                 </div>
               </div>
+              <div class="App-hero-content-scroll">
+                <!-- <span>Scroll</span> -->
+                <img src="../assets/arrow-scroll.png" alt="">
+              </div>
             </div>
           </section>
         </section>
+        <!-- about me//////// -->
         <section class="App-about-me">
           <div class="App-about-me-content space-style">
             <div class="App-about-me-header">
               <div class="App-about-me-photo">
-                <img src="../assets/photo-3d-profile.png" alt="" />
+                <img id="rotate-photo" src="../assets/photo-3d-profile.png" alt="" />
               </div>
               <div class="App-about-me-title">
-                <h1>¿Quien soy?</h1>
+                <h1 id="header-translate">¿Quien soy?</h1>
               </div>
             </div>
             <div class="about-me-info">
@@ -84,6 +97,7 @@
             </div>
           </div>
         </section>
+        <!-- Portfolio/////////// -->
         <section class="App-portfolio">
           <div class="App-portfolio-content space-style">
             <div class="App-portfolio-content-img-title">
@@ -92,6 +106,7 @@
             <div class="App-portfolio-content-photos"></div>
           </div>
         </section>
+        <!-- Testimony//////////// -->
         <section class="App-testimony">
           <div class="App-testimony-content space-style">
             <div class="App-testimony-header">
@@ -100,6 +115,7 @@
             <div class="App-testimony-clients"></div>
           </div>
         </section>
+        <!-- Footer - Services -->
         <section class="wrapper-service-footer">
           <section class="App-service">
             <div class="App-service-content space-style">
@@ -121,7 +137,7 @@
                 <h1>Trabajemos juntos</h1>
               </div>
               <div class="App-contact-content-form">
-                <form action="">
+                <form action=""></form>
                   <div class="content-input">
                     <div>
                       <label for="">Nombre</label>
@@ -143,14 +159,32 @@
               </div>
             </div>
           </section>
+          <!-- footer -->
           <section class="App-footer">
             <div class="App-footer-content space-style">
-              <div class="App-footer-content-one"></div>
-              <div class="App-footer-content-two"></div>
+              <div class="App-footer-content-social-media">
+                <div class="content-twitter">
+                  <span
+                    class="iconify"
+                    data-inline="false"
+                    data-icon="akar-icons:twitter-fill"
+                    style="color: #24423b; font-size: 48px"
+                  ></span>
+                </div>
+                <div class="content-twitter">
+                  <span
+                    class="iconify"
+                    data-inline="false"
+                    data-icon="akar-icons:instagram-fill"
+                    style="color: #24423b; font-size: 48px"
+                  ></span>
+                </div>
+              </div>
             </div>
           </section>
         </section>
       </div>
     </div>
+    <script src="https://code.iconify.design/1/1.0.6/iconify.min.js"></script>
   </body>
 </html>

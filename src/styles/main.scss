@@ -23,9 +23,9 @@ $colors: (
 );
 
 $font-size: (
-  "title": calc(2vw + 5em),
+  "title": calc(2vw + 3em),
   "subtitle": calc(1.8em + 1vw),
-  "main-font": calc(1em + 0.7vw),
+  "main-font": 18px,
   "small-text": calc(0.9em + 0.5vw),
   "header-card": calc(1.5em + 0.8vw),
   "line-height": 35px,
@@ -37,113 +37,183 @@ body {
 
 .container {
   overflow: hidden;
+  position: relative;
+}
+
+.container::before {
+  content: "";
+  display: none;
+  background: radial-gradient(transparent, #383227);
+  position: fixed;
+  top: -25vh;
+  left: -25vw;
+  width: 150vw;
+  height: 150vh;
+  opacity: .3;
+  z-index: 150;
 }
 
 .space-style {
   padding: 0 4vw;
 }
 
-.App-header {
-  padding-top: 3vh;
-  opacity: 0;
-  & .App-nav-content-links {
-    display: flex;
-    width: 100%;
-    justify-content: space-around;
-  }
-}
+.container-header-hero {
+  background: url("../../assets/back-paper-hero.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  & .App-header {
+    padding-top: 3vh;
+    opacity: 1;
+    position: relative;
+    z-index: 200;
 
-.App-hero {
-  // padding-top: 6vh;
-  height: 100vh;
-  & .App-hero-content {
-    height: 100%;
-    & .App-hero-content-info-action {
+    .App-nav-links {
+      transition: all linear .3s;
+      height: 0vh;
+      opacity: 0;
+    }
+
+    .App-nav-links.open {
+      height: 50vh;
+      opacity: 1;
+    }
+    .App-nav-content-links {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      height: 100%;
+      & .nav-link {
+        cursor: pointer;
+        color: map-get($colors, "primary-text");
+        font-size: map-get($font-size, "main-font");
+        font-weight: 500;
+        letter-spacing: 1px;
+      }
+    }
+    .content-button-nav {
+      // border: 2px solid red;
+      position: absolute;
+      top: 3vh;
+      right: 3vw;
+      width: 48px;
+      height: 48px;
+      & .iconify {
+        transition: all linear .3s;
+        display: block;
+      }
+      & svg {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+      }
+      & .open-icon.close {
+        opacity: 0;
+      }
+      & .close-icon {
+        opacity: 0;
+      }
+      & .close-icon.open {
+        opacity: 1;
+      }
+    }
+  }
+  & .App-hero {
+    height: calc(100vh - 7vh);
+    & .App-hero-content {
       height: 100%;
       position: relative;
-      z-index: 100;
-      & .App-hero-info {
+      & .App-hero-content-info-action {
         height: 100%;
+        position: relative;
+        z-index: 100;
+        & .App-hero-info {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between;
+        }
+        .App-info {
+          color: map-get($colors, "primary-text");
+          & h1,
+          h2,
+          h6 {
+            padding-top: 1vh;
+          }
+          & .App-hero-role {
+            font-size: map-get($font-size, "title");
+            font-weight: 600;
+          }
+
+          & .App-hero-name {
+            font-size: map-get($font-size, "subtitle");
+            font-weight: 500;
+          }
+
+          & .App-hero-capture {
+            font-size: map-get($font-size, "small-text");
+            font-weight: 400;
+          }
+        }
+
+        .App-action {
+          padding-bottom: 10vh;
+          & .content-button-contact {
+            display: flex;
+            justify-content: flex-end;
+            padding-top: 5vh;
+            & button {
+              border: none;
+              background: none;
+              background-color: map-get($colors, "accent-light");
+              border-radius: 50px;
+              cursor: pointer;
+              color: map-get($colors, "primary-text");
+              font-size: map-get($font-size, "main-font");
+              font-weight: 600;
+              padding: 2vh 12vw;
+            }
+          }
+        }
+      }
+      & .App-hero-content-image {
+        & .content-image {
+          height: 100vh;
+          width: 100%;
+          position: relative;
+          transform: translateY(-100vh);
+          padding-top: 30vh;
+          & img {
+            width: 100%;
+            transform: scale(1.8);
+          }
+        }
+      }
+
+      & .App-hero-content-scroll {
+        // border: 2px solid rgb(6, 42, 14);
+        border-radius: 100px ;
         display: flex;
-        flex-direction: column;
-        justify-content: space-between;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: 0;
+        bottom: 10vh;
+        width: 150px;
+        height: 150px;
+        opacity: 0;
+        & img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+        }
       }
     }
   }
 }
 
-.container-header-hero {
-  background: url("../../assets/back-paper-hero.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-}
-
-.App-info {
-  color: map-get($colors, "primary-text");
-  & h1,
-  h2,
-  h6 {
-    padding-top: 1vh;
-  }
-  & .App-hero-role {
-    font-size: map-get($font-size, "title");
-    font-weight: 600;
-  }
-
-  & .App-hero-name {
-    font-size: map-get($font-size, "subtitle");
-    font-weight: 500;
-  }
-
-  & .App-hero-capture {
-    font-size: map-get($font-size, "small-text");
-    font-weight: 400;
-  }
-}
-
-.App-action {
-  padding-bottom: 10vh;
-  & .content-button-contact {
-    display: flex;
-    justify-content: flex-end;
-    padding-top: 5vh;
-    & button {
-      border: none;
-      background: none;
-      background-color: map-get($colors, "accent-light");
-      border-radius: 50px;
-      color: map-get($colors, "primary-text");
-      font-size: map-get($font-size, "main-font");
-      font-weight: 600;
-      padding: 2vh 12vw;
-    }
-  }
-}
-
-.App-hero-content {
-  // background: url("../../assets/photos-hero.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: bottom;
-}
-
-.App-hero-content-image {
-  & .content-image {
-    // position: absolute;
-    // top: 351px;
-    // left: 0;
-    // transform: scale(1.8);
-    height: 100vh;
-    width: 100%;
-    position: relative;
-    transform: translateY(-100vh);
-    padding-top: 30vh;
-    & img {
-      width: 100%;
-      transform: scale(1.8);
-    }
-  }
-}
+//About me ///////////////////
 
 .App-about-me {
   background-color: map-get($colors, "complementary-light");
@@ -180,8 +250,9 @@ body {
       }
     }
     & .wrapper-title-portfolio {
-      // border: 1px solid blue;
       position: relative;
+      display: flex;
+      justify-content: flex-end;
       & .about-me-title-portfolio {
         background: url("../../assets/rollo-portfolio.png");
         background-size: cover;
@@ -190,7 +261,6 @@ body {
         justify-content: center;
         padding: 2vh 0;
         margin-top: 20vh;
-        // transform: translateX(30%);
       }
     }
 
@@ -201,7 +271,7 @@ body {
     }
   }
 }
-
+//Portfolio///////////////
 .App-portfolio {
   background-color: map-get($colors, "back-portfolio");
   & .App-portfolio-content-img-title {
@@ -211,24 +281,55 @@ body {
   & .App-portfolio-content-img-title img {
     width: 100%;
   }
-}
 
-.App-portfolio-content-photos {
-  transform: scale(0.8);
-  & .portfolio-content-photos {
-    margin-top: 2vh;
+  .App-portfolio-content-photos {
+    transform: scale(0.8);
+    & .portfolio-content-photos {
+      display: flex;
+      justify-content: center;
+      margin-top: 14vh;
+      position: relative;
+      aspect-ratio: 1/1;
+      & .portfolio-content-paper {
+        background: url("../../assets/name-label.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        // border: 2px solid red;
+        position: absolute;
+        top: -75px;
+        width: 250px;
+        height: 120px;
+        & h6 {
+          color: map-get($colors, "primary-text");
+          font-size: map-get($font-size, "main-font");
+          font-weight: 500;
+          letter-spacing: 1px;
+        }
+      }
+      & img {
+        width: 100%;
+        
+        object-fit: contain;
+      }
+    }
+    & .portfolio-content-photos:first-child {
+      margin: 0;
+    }
   }
 }
 
-.portfolio-content-photos img {
-  width: 100%;
-}
-
+//Testimony
 .App-testimony {
   background-color: map-get($colors, "complementary-dark");
-  padding: 10vh 0;
+  padding: 20vh 0;
 
   & .App-testimony-clients {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20vh 5vw;
     padding-top: 15vh;
   }
   & .App-testimony-header h1 {
@@ -251,15 +352,14 @@ body {
       font-size: map-get($font-size, "header-card");
       letter-spacing: 1px;
     }
-  }
-}
-
-.testimony-content-testimony {
-  padding-top: 4vh;
-  & p {
-    font-size: map-get($font-size, "main-font");
-    font-weight: 500;
-    letter-spacing: 1px;
+    & .testimony-content-testimony {
+      padding-top: 4vh;
+      & p {
+        font-size: map-get($font-size, "main-font");
+        font-weight: 500;
+        letter-spacing: 1px;
+      }
+    }
   }
 }
 
@@ -269,119 +369,134 @@ body {
   background-repeat: no-repeat;
   color: map-get($colors, "primary-text");
   padding: 10vh 0 0 0;
-}
 
-.App-service-content-services {
-  padding-top: 10vh;
-}
-
-.App-service-content-title {
-  text-align: center;
-  & .service-content-title h1 {
-    font-size: map-get($font-size, "title");
-    font-weight: 600;
-    letter-spacing: 1px;
-  }
-  & .service-content-title h4 {
-    font-size: map-get($font-size, "main-font");
-    margin-top: 2vh;
-    font-weight: 500;
-    letter-spacing: 1px;
-  }
-}
-
-.service {
-  background-color: map-get($colors, "primary-light");
-  border-radius: 4px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 6vh 0;
-  margin-top: 6vh;
-  & .service-title h4 {
-    font-size: map-get($font-size, "header-card");
-    font-weight: 500;
-    letter-spacing: 1px;
-  }
-  & ul li {
-    padding: 2vh 2vw;
-    margin-top: 4vh;
-  }
-  & .content-price {
-    padding-top: 6vh;
-    p {
-      font-size: 22px;
-      font-weight: 600;
-    }
-  }
-  & .content-button-cita {
-    padding-top: 4vh;
-    & button {
-      border: none;
-      background: none;
-      border: 2px solid map-get($colors, "accent-light");
-      border-radius: 50px;
-      color: map-get($colors, "primary-text");
-      font-size: map-get($font-size, "main-font");
-      font-weight: 600;
-      padding: 2vh 12vw;
-    }
-  }
-}
-
-.App-contact {
-  padding-top: 20vh;
-
-  .App-contact-content-title {
+  .App-service-content-title {
     text-align: center;
-    & h1 {
+    & .service-content-title h1 {
       font-size: map-get($font-size, "title");
       font-weight: 600;
+      letter-spacing: 1px;
+    }
+    & .service-content-title h4 {
+      font-size: map-get($font-size, "main-font");
+      margin-top: 2vh;
+      font-weight: 500;
+      letter-spacing: 1px;
     }
   }
 
-  .content-input input,
-  .content-input textarea {
-    background-color: map-get($colors, "back-input");
-    border: 0px;
-    font-size: 17px;
-    padding: 1.5vh 3vw;
-    width: 100%;
-  }
+  .App-service-content-services {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 10vh 10vw;
+    padding-top: 10vh;
 
-  .content-input div label {
-    display: block;
-    letter-spacing: 1px;
-    margin-bottom: 1vh;
-  }
-  .content-input div:not(div:first-child) {
-    margin-top: 4vh;
-  }
-
-  .App-contact-content-form {
-    padding: 10vh 3vw;
-    .content-button-send-mail {
+    & .service {
+      background-color: map-get($colors, "primary-light");
+      border-radius: 4px;
       display: flex;
-      justify-content: center;
-      padding-top: 5vh;
-      & button {
-        border: none;
-        background: none;
-        background-color: map-get($colors, "accent-light");
-        border-radius: 50px;
-        color: map-get($colors, "primary-text");
+      flex-direction: column;
+      align-items: center;
+      padding: 6vh 0;
+      margin-top: 6vh;
+      & .service-title h4 {
+        font-size: map-get($font-size, "header-card");
+        font-weight: 500;
+        letter-spacing: 1px;
+      }
+      & ul li {
+        padding: 2vh 2vw;
+        margin-top: 4vh;
         font-size: map-get($font-size, "main-font");
+      }
+      & .content-price {
+        padding-top: 6vh;
+        p {
+          font-size: 22px;
+          font-weight: 600;
+        }
+      }
+      & .content-button-cita {
+        padding-top: 4vh;
+        & button {
+          border: none;
+          background: none;
+          border: 2px solid map-get($colors, "accent-light");
+          border-radius: 50px;
+          color: map-get($colors, "primary-text");
+          font-size: map-get($font-size, "main-font");
+          font-weight: 600;
+          padding: 2vh 12vw;
+        }
+      }
+    }
+  }
+  & .App-contact {
+    padding-top: 20vh;
+
+    .App-contact-content-title {
+      text-align: center;
+      & h1 {
+        font-size: map-get($font-size, "title");
         font-weight: 600;
-        padding: 2vh 12vw;
+      }
+    }
+
+    .App-contact-content-form {
+      padding: 10vh 3vw;
+      .content-input {
+        & input,
+        & textarea {
+          background-color: map-get($colors, "back-input");
+          border: 0px;
+          font-size: 17px;
+          padding: 1.5vh 1.3vw;
+          width: 100%;
+        }
+        & div,
+        & label {
+          display: block;
+          letter-spacing: 1px;
+          margin-bottom: 1vh;
+        }
+        & div:not(div:first-child) {
+          margin-top: 4vh;
+        }
+      }
+      .content-button-send-mail {
+        display: flex;
+        justify-content: center;
+        padding-top: 5vh;
+        & button {
+          border: none;
+          background: none;
+          background-color: map-get($colors, "accent-light");
+          border-radius: 50px;
+          color: map-get($colors, "primary-text");
+          font-size: map-get($font-size, "main-font");
+          font-weight: 600;
+          padding: 2vh 12vw;
+        }
       }
     }
   }
 }
 
-@media only screen and (min-width: 768px) {
-  body {
-    border: 2px solid red;
+//Footer//////
+.App-footer {
+  padding-bottom: 8vh;
+  & .App-footer-content {
+    display: flex;
+    justify-content: space-around;
+    & .App-footer-content-social-media {
+      display: flex;
+      justify-content: space-around;
+      width: 50%;
+    }
   }
+}
+
+@media only screen and (min-width: 768px) {
   .space-style {
     padding: 0 10vw;
   }
@@ -392,134 +507,84 @@ body {
 }
 
 @media only screen and (min-width: 1024px) {
-  body {
-    border: 2px solid blue;
-  }
-
   .space-style {
     padding: 0 4vw;
   }
 
-  .App-info {
-    color: map-get($colors, "primary-text");
-    & h1,
-    h2,
-    h6 {
-      padding-top: 1vh;
-    }
-    & .App-hero-role {
-      font-size: 76.24px;
-      font-weight: 600;
-    }
+  //////////////
 
-    & .App-hero-name {
-      font-size: 47.12px;
-      font-weight: 500;
-    }
+  .container-header-hero {
+    & .App-header {
+      opacity: 1;
 
-    & .App-hero-capture {
-      font-size: 18px;
-      font-weight: 400;
-    }
-  }
-
-  .App-hero-content-image {
-    & .content-image {
-      height: 100vh;
-      width: 100%;
-      position: relative;
-      transform: translateY(-110vh) translateX(10%);
-      padding-top: 0vh;
-      & img {
-        width: 100%;
-        transform: scale(0.8);
+      .App-nav-links {
+        display: flex;
+        justify-content: center;
+        & .App-nav-content-links {
+          display: flex;
+          width: 50%;
+          justify-content: space-around;
+        }
       }
     }
-  }
+    & .App-hero {
+      & .App-hero-content {
+        & .App-hero-content-info-action {
+          & .App-hero-info {
+            align-items: flex-start;
+            width: 40vw;
+            height: auto;
+            padding-top: 10vh;
+          }
 
-  .App-hero {
-    // padding-top: 6vh;
-    height: 100vh;
-    & .App-hero-content {
-      height: 100%;
-      & .App-hero-content-info-action {
-        height: 100%;
-        & .App-hero-info {
-          display: flex;
-          flex-direction: column;
-          justify-content: space-between;
-          align-items: flex-start;
-          width: 40vw;
-          height: auto;
-          padding-top: 10vh;
-          position: relative;
-          z-index: 100;
+          .App-action {
+            & .content-button-contact {
+              padding-top: 5vh;
+              & button {
+                padding: 2vh 4vw;
+              }
+            }
+          }
+        }
+        & .App-hero-content-image {
+          & .content-image {
+            transform: translateY(-110vh) translateX(10%);
+            padding-top: 0vh;
+            & img {
+              transform: scale(0.8);
+            }
+          }
+        }
+        & .App-hero-content-scroll {
+          opacity: 1;
         }
       }
     }
   }
 
-  .App-action {
-    padding-bottom: 10vh;
-    & .content-button-contact {
-      display: flex;
-      justify-content: flex-end;
-      padding-top: 5vh;
-      & button {
-        border: none;
-        background: none;
-        background-color: map-get($colors, "accent-light");
-        border-radius: 50px;
-        color: map-get($colors, "primary-text");
-        font-size: map-get($font-size, "main-font");
-        font-weight: 600;
-        padding: 2vh 4vw;
-      }
-    }
-  }
+  ////////
 
   .App-about-me {
-    background-color: map-get($colors, "complementary-light");
     padding: 40vh 0 60vh 0;
     & .App-about-me-content {
       & .App-about-me-header {
-        display: flex;
-        flex-direction: column-reverse;
-
         & .App-about-me-photo {
           padding-top: 10vh;
-
           & img {
             transform: scale(1) rotate(-25deg);
           }
         }
-
         & .App-about-me-title {
           text-align: end;
-          & h1 {
-            color: map-get($colors, "primary-text");
-            font-size: 76.24px;
-            font-weight: 600;
-            letter-spacing: 1px;
-          }
         }
       }
       & .about-me-info {
         padding: 10vh 25vw 10vh 2vw;
         & p {
-          color: map-get($colors, "primary-text");
-          margin-top: 6vh;
           font-size: map-get($font-size, "main-font");
-          line-height: map-get($font-size, "line-height");
-          letter-spacing: 1px;
-          font-weight: 500;
         }
       }
       & .wrapper-title-portfolio {
-        // border: 1px solid blue;
-        display: flex;
-        justify-content: flex-end;
-        position: relative;
         & .about-me-title-portfolio {
           background: url("../../assets/rollo-portfolio.png");
           background-size: cover;
@@ -528,12 +593,11 @@ body {
           justify-content: center;
           padding: 4vh 0;
           margin-top: 20vh;
-          width: 40vw;
+          width: 50vw;
         }
       }
 
       & .about-me-title-portfolio h1 {
-        font-size: 76.24px;
         font-weight: 600;
         letter-spacing: 1px;
       }
@@ -558,21 +622,106 @@ body {
     grid-column-gap: 7vw;
     grid-row-gap: 15vh;
     & .portfolio-content-photos:nth-child(2n + 1) {
-      // margin-top: 2vh;
-      // border: 2px solid red;
       transform: rotate(4deg) translateY(-20%);
     }
 
     & .portfolio-content-photos:nth-child(2n + 2) {
-      // margin-top: 2vh;
-      // border: 2px solid rgb(12, 61, 221);
-      transform: rotate(-3deg) scale(.6);
-    }
-
-    & .portfolio-content-photos:nth-child(2n + 3) {
-      // margin-top: 2vh;
-      // border: 2px solid rgb(12, 61, 221);
-      transform: rotate(-3deg) scale(1.2);
+      transform: rotate(-3deg) scale(0.6);
     }
   }
+
+  .App-testimony {
+    background-color: map-get($colors, "complementary-dark");
+    padding: 20vh 0;
+
+    & .App-testimony-clients {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 20vh 5vw;
+      padding-top: 15vh;
+    }
+    & .App-testimony-header h1 {
+      color: map-get($colors, "primary-light");
+      text-align: center;
+      font-size: map-get($font-size, "title");
+      font-weight: 600;
+      letter-spacing: 1px;
+    }
+
+    .testimony:nth-child(1) {
+      transform: scale(0.8) rotate(-3deg) translateY(-10%);
+    }
+
+    .testimony:nth-child(2) {
+      transform: scale(0.8) rotate(-2deg);
+    }
+
+    .testimony:nth-child(3) {
+      transform: scale(0.8) rotate(2deg) translateY(10%);
+    }
+
+    .testimony {
+      background: url("../../assets/card-paper.png");
+      background-size: cover;
+      color: map-get($colors, "primary-text");
+      height: 70vh;
+      padding: 8vh 6vw;
+      margin-top: 6vh;
+      transform: scale(0.8);
+      & h4 {
+        padding-top: 2vh;
+        text-align: center;
+        font-size: map-get($font-size, "header-card");
+        letter-spacing: 1px;
+      }
+    }
+  }
+
+  ///
+  .wrapper-service-footer {
+    background: url("../../assets/back-services.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: map-get($colors, "primary-text");
+    padding: 10vh 0 0 0;
+
+    .App-service-content-title {
+      text-align: center;
+      & .service-content-title h1 {
+        font-size: map-get($font-size, "title");
+        font-weight: 600;
+        letter-spacing: 1px;
+      }
+      & .service-content-title h4 {
+        font-size: map-get($font-size, "main-font");
+        margin-top: 2vh;
+        font-weight: 500;
+        letter-spacing: 1px;
+      }
+    }
+
+    .App-service-content-services {
+      padding: 10vh 10vw;
+      & .service {
+        & .content-button-cita {
+          & button {
+            padding: 2vh 5vw;
+          }
+        }
+      }
+    }
+    & .App-contact {
+      padding-top: 20vh;
+      .App-contact-content-form {
+        padding: 10vh 20vw;
+        .content-button-send-mail {
+          & button {
+            padding: 2vh 6vw;
+          }
+        }
+      }
+    }
+  }
+
+  ///////////////////
 }
