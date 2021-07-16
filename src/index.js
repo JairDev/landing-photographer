@@ -9,12 +9,13 @@ import imagePortfolio4 from "./assets/photo4-port.png";
 import imagePortfolio5 from "./assets/photo5-port.png";
 import imagePortfolio6 from "./assets/photo6-port.png";
 import imagePortfolio7 from "./assets/photo7-port.png";
-import "./assets/photos-header-portfolio.png"
+import "./assets/photos-header-portfolio.png";
 import paperCard from "./assets/card-paper.png";
 import "./assets/name-label.png";
-import "./assets/arrow-scroll.png"
-import "./assets/photos-hero.png"
-import "./assets/photo-3d-profile.png"
+import "./assets/arrow-scroll.png";
+import "./assets/photos-hero.png";
+import "./assets/photo-3d-profile.png";
+import "./assets/placeholder-image.jpg";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -47,9 +48,9 @@ function validate() {
     console.log(e);
     Array.from(input).forEach((value) => {
       if (!value.value) {
-        errorSubmit.classList.add("show")
-      }else {
-        errorSubmit.classList.remove("show")
+        errorSubmit.classList.add("show");
+      } else {
+        errorSubmit.classList.remove("show");
       }
     });
 
@@ -173,8 +174,10 @@ dataPortfolio.forEach((photos) => {
   div.setAttribute("id", "photos-show-portfolio");
   divContentTitle.setAttribute("class", "portfolio-content-paper");
   title.textContent = photos.name;
-  img.setAttribute("src", photos.src);
+  img.setAttribute("src", "./assets/placeholder-image.jpg");
+  img.setAttribute("data-src", photos.src);
   img.setAttribute("alt", "Fotografía de una persona");
+  // img.setAttribute("id", "show-data");
   div.appendChild(img);
   div.appendChild(divContentTitle);
   divContentTitle.appendChild(title);
@@ -234,6 +237,7 @@ testimonyNode.appendChild(fragmentTestimony);
 serviceNode.appendChild(fragmentService);
 
 window.addEventListener("load", (e) => {
+  const hiddenData = document.querySelectorAll("#show-data");
   const photo = document.getElementById("rotate-photo");
   const header = document.getElementById("header-translate");
   const portfolio = document.querySelector(
@@ -286,6 +290,23 @@ window.addEventListener("load", (e) => {
       duration: 1,
     });
   }
+  let options = {
+    root: null,
+    rootMargin: "0px 0px 0px 0px",
+    threshold: 0.1,
+  };
+
+  const observer = new IntersectionObserver((entries, observe) => {
+    entries.forEach((entrie) => {
+      if (entrie.isIntersecting) {
+        const imageSrc = entrie.target.dataset.src
+        // divContentPri|ce.setAttribute("class", "content-price");
+
+        entrie.target.setAttribute("src", imageSrc)
+      }
+    });
+  }, options);
+  Array.from(hiddenData).forEach((data) => observer.observe(data));
 });
 
 let open = false;
