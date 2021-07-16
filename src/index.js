@@ -9,10 +9,12 @@ import imagePortfolio4 from "./assets/photo4-port.png";
 import imagePortfolio5 from "./assets/photo5-port.png";
 import imagePortfolio6 from "./assets/photo6-port.png";
 import imagePortfolio7 from "./assets/photo7-port.png";
-import photosHeaderPortfolio from "./assets/photos-header-portfolio.png"
+import "./assets/photos-header-portfolio.png"
 import paperCard from "./assets/card-paper.png";
-import paperCardPortfolio from "./assets/name-label.png";
-import arrowScroll from "./assets/arrow-scroll.png"
+import "./assets/name-label.png";
+import "./assets/arrow-scroll.png"
+import "./assets/photos-hero.png"
+import "./assets/photo-3d-profile.png"
 
 gsap.registerPlugin(ScrollTrigger);
 
