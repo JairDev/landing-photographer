@@ -1,0 +1,565 @@
+/*!***************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/dist/cjs.js!./src/styles/main.scss ***!
+  \***************************************************************************************************************/
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0; }
+
+li {
+  list-style: none; }
+
+body {
+  font-family: "Poppins", sans-serif; }
+
+.container {
+  overflow: hidden;
+  position: relative; }
+
+.container::before {
+  content: "";
+  display: none;
+  background: radial-gradient(transparent, #383227);
+  position: fixed;
+  top: -25vh;
+  left: -25vw;
+  width: 150vw;
+  height: 150vh;
+  opacity: .3;
+  z-index: 150; }
+
+.space-style {
+  padding: 0 4vw; }
+
+.container-header-hero {
+  background: url(../assets/back-paper-hero.png);
+  background-size: cover;
+  background-repeat: no-repeat; }
+  .container-header-hero .App-header {
+    padding-top: 3vh;
+    opacity: 1;
+    position: relative;
+    z-index: 200; }
+    .container-header-hero .App-header .App-nav-links {
+      transition: all linear .3s;
+      height: 0vh;
+      opacity: 0; }
+    .container-header-hero .App-header .App-nav-links.open {
+      height: 50vh;
+      opacity: 1; }
+    .container-header-hero .App-header .App-nav-content-links {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      align-items: center;
+      width: 100%;
+      height: 100%; }
+      .container-header-hero .App-header .App-nav-content-links .nav-link {
+        cursor: pointer;
+        color: #24423b;
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 1px; }
+    .container-header-hero .App-header .content-button-nav {
+      position: absolute;
+      top: 3vh;
+      right: 3vw;
+      width: 48px;
+      height: 48px; }
+      .container-header-hero .App-header .content-button-nav .iconify {
+        transition: all linear .3s;
+        display: block; }
+      .container-header-hero .App-header .content-button-nav svg {
+        position: absolute;
+        width: 100%;
+        height: 100%; }
+      .container-header-hero .App-header .content-button-nav .open-icon.close {
+        opacity: 0; }
+      .container-header-hero .App-header .content-button-nav .close-icon {
+        opacity: 0; }
+      .container-header-hero .App-header .content-button-nav .close-icon.open {
+        opacity: 1; }
+  .container-header-hero .App-hero {
+    height: calc(100vh - 3vh);
+    padding-top: 2vh; }
+    .container-header-hero .App-hero .App-hero-content {
+      height: 100%;
+      position: relative; }
+      .container-header-hero .App-hero .App-hero-content .App-hero-content-info-action {
+        height: 100%;
+        position: relative;
+        z-index: 100; }
+        .container-header-hero .App-hero .App-hero-content .App-hero-content-info-action .App-hero-info {
+          height: 100%;
+          display: flex;
+          flex-direction: column;
+          justify-content: space-between; }
+        .container-header-hero .App-hero .App-hero-content .App-hero-content-info-action .App-info {
+          color: #24423b; }
+          .container-header-hero .App-hero .App-hero-content .App-hero-content-info-action .App-info h1,
+          .container-header-hero .App-hero .App-hero-content .App-hero-content-info-action .App-info h2,
+          .container-header-hero .App-hero .App-hero-content .App-hero-content-info-action .App-info h6 {
+            padding-top: 1vh; }
+          .container-header-hero .App-hero .App-hero-content .App-hero-content-info-action .App-info .App-hero-role {
+            font-size: calc(2vw + 3em);
+            font-weight: 600; }
+          .container-header-hero .App-hero .App-hero-content .App-hero-content-info-action .App-info .App-hero-name {
+            font-size: calc(1.8em + 1vw);
+            font-weight: 500; }
+          .container-header-hero .App-hero .App-hero-content .App-hero-content-info-action .App-info .App-hero-capture {
+            font-size: calc(0.9em + 0.5vw);
+            font-weight: 400; }
+        .container-header-hero .App-hero .App-hero-content .App-hero-content-info-action .App-action {
+          padding-bottom: 10vh; }
+          .container-header-hero .App-hero .App-hero-content .App-hero-content-info-action .App-action .content-button-contact {
+            display: flex;
+            justify-content: flex-end;
+            padding-top: 5vh; }
+            .container-header-hero .App-hero .App-hero-content .App-hero-content-info-action .App-action .content-button-contact button {
+              border: none;
+              background: none;
+              background-color: #df7861;
+              border-radius: 50px;
+              cursor: pointer;
+              color: #24423b;
+              font-size: 18px;
+              font-weight: 600;
+              padding: 2vh 12vw; }
+      .container-header-hero .App-hero .App-hero-content .App-hero-content-image .content-image {
+        height: 100vh;
+        width: 100%;
+        position: relative;
+        transform: translateY(-90vh) translateX(15%);
+        padding-top: 30vh; }
+        .container-header-hero .App-hero .App-hero-content .App-hero-content-image .content-image img {
+          width: 100%;
+          transform: scale(1.8); }
+      .container-header-hero .App-hero .App-hero-content .App-hero-content-scroll {
+        border-radius: 100px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        left: 0;
+        bottom: 10vh;
+        width: 150px;
+        height: 150px;
+        opacity: 0;
+        transform: rotate(-20px); }
+        .container-header-hero .App-hero .App-hero-content .App-hero-content-scroll img {
+          width: 100%;
+          height: 100%;
+          object-fit: contain; }
+
+.App-about-me {
+  background-color: #d4e2d4;
+  padding: 10vh 0 40vh 0; }
+  .App-about-me .App-about-me-content .App-about-me-header {
+    display: flex;
+    flex-direction: column-reverse; }
+    .App-about-me .App-about-me-content .App-about-me-header .App-about-me-photo {
+      padding-top: 10vh;
+      transform: scale(0.8); }
+    .App-about-me .App-about-me-content .App-about-me-header .App-about-me-title {
+      text-align: end; }
+      .App-about-me .App-about-me-content .App-about-me-header .App-about-me-title h1 {
+        color: #24423b;
+        font-size: calc(2vw + 3em);
+        font-weight: 600;
+        letter-spacing: 1px; }
+  .App-about-me .App-about-me-content .about-me-info {
+    padding-top: 10vh; }
+    .App-about-me .App-about-me-content .about-me-info p {
+      color: #24423b;
+      margin-top: 4vh;
+      font-size: 18px;
+      line-height: 35px;
+      letter-spacing: 1px;
+      font-weight: 500; }
+  .App-about-me .App-about-me-content .wrapper-title-portfolio {
+    position: relative;
+    display: flex;
+    justify-content: flex-end; }
+    .App-about-me .App-about-me-content .wrapper-title-portfolio .about-me-title-portfolio {
+      background: url(../assets/rollo-portfolio.png);
+      background-size: cover;
+      color: #fcf8e8;
+      display: flex;
+      justify-content: center;
+      padding: 2vh 0;
+      margin-top: 20vh; }
+  .App-about-me .App-about-me-content .about-me-title-portfolio h1 {
+    font-size: calc(2vw + 3em);
+    font-weight: 600;
+    letter-spacing: 1px; }
+
+.App-portfolio {
+  background-color: #ecb390; }
+  .App-portfolio .App-portfolio-content-img-title {
+    transform: translate(-15%, -25%) scale(1.7); }
+  .App-portfolio .App-portfolio-content-img-title img {
+    width: 100%; }
+  .App-portfolio .App-portfolio-content-photos {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 20vh 7vw;
+    transform: scale(0.8); }
+    .App-portfolio .App-portfolio-content-photos .portfolio-content-photos {
+      display: flex;
+      justify-content: center;
+      margin-top: 14vh;
+      position: relative;
+      aspect-ratio: 1/1; }
+      .App-portfolio .App-portfolio-content-photos .portfolio-content-photos .portfolio-content-paper {
+        background: url(../assets/name-label.png);
+        background-size: cover;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        top: -75px;
+        width: 220px;
+        height: 120px; }
+        .App-portfolio .App-portfolio-content-photos .portfolio-content-photos .portfolio-content-paper h6 {
+          color: #24423b;
+          font-size: 18px;
+          font-weight: 500;
+          letter-spacing: 1px; }
+      .App-portfolio .App-portfolio-content-photos .portfolio-content-photos img {
+        width: 100%;
+        object-fit: contain; }
+    .App-portfolio .App-portfolio-content-photos .portfolio-content-photos:first-child {
+      margin: 0; }
+
+.App-testimony {
+  background-color: #374237;
+  padding: 20vh 0; }
+  .App-testimony .App-testimony-clients {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 10vh 5vw;
+    padding-top: 15vh; }
+  .App-testimony .App-testimony-header h1 {
+    color: #fcf8e8;
+    text-align: center;
+    font-size: calc(2vw + 3em);
+    font-weight: 600;
+    letter-spacing: 1px; }
+  .App-testimony .testimony {
+    background: url(../assets/card-paper.png);
+    background-size: cover;
+    color: #24423b;
+    height: 60vh;
+    padding: 8vh 6vw;
+    transform: scale(0.8); }
+    .App-testimony .testimony h4 {
+      padding-top: 2vh;
+      text-align: center;
+      font-size: calc(1.5em + 0.8vw);
+      letter-spacing: 1px; }
+    .App-testimony .testimony .testimony-content-testimony {
+      padding-top: 4vh; }
+      .App-testimony .testimony .testimony-content-testimony p {
+        font-size: 18px;
+        font-weight: 500;
+        letter-spacing: 1px; }
+
+.wrapper-service-footer {
+  background: url(../assets/back-services.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #24423b;
+  padding: 10vh 0 0 0; }
+  .wrapper-service-footer .App-service-content-title {
+    text-align: center; }
+    .wrapper-service-footer .App-service-content-title .service-content-title h1 {
+      font-size: calc(2vw + 3em);
+      font-weight: 600;
+      letter-spacing: 1px; }
+    .wrapper-service-footer .App-service-content-title .service-content-title h4 {
+      font-size: 18px;
+      margin-top: 2vh;
+      font-weight: 500;
+      letter-spacing: 1px; }
+  .wrapper-service-footer .App-service-content-services {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 10vh 10vw;
+    padding-top: 10vh; }
+    .wrapper-service-footer .App-service-content-services .service {
+      background-color: #fcf8e8;
+      border-radius: 4px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 6vh 0;
+      margin-top: 6vh; }
+      .wrapper-service-footer .App-service-content-services .service .service-title h4 {
+        font-size: calc(1.5em + 0.8vw);
+        font-weight: 500;
+        letter-spacing: 1px; }
+      .wrapper-service-footer .App-service-content-services .service ul li {
+        padding: 2vh 2vw;
+        margin-top: 4vh;
+        font-size: 18px; }
+      .wrapper-service-footer .App-service-content-services .service .content-price {
+        padding-top: 6vh; }
+        .wrapper-service-footer .App-service-content-services .service .content-price p {
+          font-size: 22px;
+          font-weight: 600; }
+      .wrapper-service-footer .App-service-content-services .service .content-button-cita {
+        padding-top: 4vh; }
+        .wrapper-service-footer .App-service-content-services .service .content-button-cita button {
+          border: none;
+          background: none;
+          border: 2px solid #df7861;
+          border-radius: 50px;
+          color: #24423b;
+          font-size: 18px;
+          font-weight: 600;
+          padding: 2vh 12vw; }
+  .wrapper-service-footer .App-contact {
+    padding-top: 20vh; }
+    .wrapper-service-footer .App-contact .App-contact-content-title {
+      text-align: center; }
+      .wrapper-service-footer .App-contact .App-contact-content-title h1 {
+        font-size: calc(2vw + 3em);
+        font-weight: 600; }
+    .wrapper-service-footer .App-contact .App-contact-content-form {
+      padding: 10vh 3vw; }
+      .wrapper-service-footer .App-contact .App-contact-content-form .content-input div {
+        position: relative; }
+      .wrapper-service-footer .App-contact .App-contact-content-form .content-input #error-message {
+        color: #c81f1f;
+        display: block;
+        font-size: 14px;
+        opacity: 0;
+        position: absolute;
+        bottom: -30px; }
+      .wrapper-service-footer .App-contact .App-contact-content-form .content-input #error-message.show {
+        opacity: 1; }
+      .wrapper-service-footer .App-contact .App-contact-content-form .content-input input {
+        border-radius: 50px; }
+      .wrapper-service-footer .App-contact .App-contact-content-form .content-input input,
+      .wrapper-service-footer .App-contact .App-contact-content-form .content-input textarea {
+        background-color: #fdf4e8;
+        border: 0px;
+        font-size: 17px;
+        padding: 1.5vh 2vw;
+        width: 100%; }
+      .wrapper-service-footer .App-contact .App-contact-content-form .content-input div,
+      .wrapper-service-footer .App-contact .App-contact-content-form .content-input label {
+        display: block;
+        letter-spacing: 1px;
+        margin-bottom: 1vh; }
+      .wrapper-service-footer .App-contact .App-contact-content-form .content-input div:not(div:first-child) {
+        margin-top: 6vh; }
+      .wrapper-service-footer .App-contact .App-contact-content-form .content-button-send-mail {
+        display: flex;
+        justify-content: center;
+        padding-top: 5vh;
+        position: relative; }
+        .wrapper-service-footer .App-contact .App-contact-content-form .content-button-send-mail button {
+          border: none;
+          background: none;
+          background-color: #df7861;
+          border-radius: 50px;
+          color: #24423b;
+          font-size: 18px;
+          font-weight: 600;
+          padding: 2vh 12vw; }
+        .wrapper-service-footer .App-contact .App-contact-content-form .content-button-send-mail #error-submit {
+          color: #c81f1f;
+          display: block;
+          font-size: 18px;
+          position: absolute;
+          bottom: -30px;
+          opacity: 0; }
+        .wrapper-service-footer .App-contact .App-contact-content-form .content-button-send-mail #error-submit.show {
+          color: #c81f1f;
+          display: block;
+          font-size: 18px;
+          position: absolute;
+          bottom: -30px;
+          opacity: 1; }
+
+.App-footer {
+  padding-bottom: 8vh; }
+  .App-footer .App-footer-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center; }
+    .App-footer .App-footer-content .App-footer-content-social-media {
+      display: flex;
+      justify-content: space-around;
+      width: 50%; }
+    .App-footer .App-footer-content .App-footer-content-derechos {
+      padding-top: 5vh; }
+      .App-footer .App-footer-content .App-footer-content-derechos .autor {
+        text-align: center; }
+        .App-footer .App-footer-content .App-footer-content-derechos .autor h6 {
+          font-size: 16px;
+          font-weight: 500; }
+
+@media only screen and (min-width: 768px) {
+  .space-style {
+    padding: 0 10vw; }
+  .App-hero-content {
+    background-position: top; } }
+
+@media only screen and (min-width: 1024px) {
+  .space-style {
+    padding: 0 4vw; }
+  .container-header-hero .App-header {
+    opacity: 1; }
+    .container-header-hero .App-header .App-nav-links {
+      display: flex;
+      justify-content: center;
+      padding: 3vh 0;
+      opacity: 1; }
+      .container-header-hero .App-header .App-nav-links .App-nav-content-links {
+        display: flex;
+        flex-direction: row;
+        width: 50%;
+        justify-content: space-around; }
+        .container-header-hero .App-header .App-nav-links .App-nav-content-links .content-li-border-bottom {
+          position: relative; }
+          .container-header-hero .App-header .App-nav-links .App-nav-content-links .content-li-border-bottom img {
+            position: absolute;
+            bottom: -2vh; }
+    .container-header-hero .App-header .content-button-nav {
+      position: absolute;
+      top: 3vh;
+      right: 3vw;
+      width: 48px;
+      height: 48px;
+      opacity: 0; }
+      .container-header-hero .App-header .content-button-nav .iconify {
+        transition: all linear .3s;
+        display: block; }
+      .container-header-hero .App-header .content-button-nav svg {
+        position: absolute;
+        width: 100%;
+        height: 100%; }
+      .container-header-hero .App-header .content-button-nav .open-icon.close {
+        opacity: 0; }
+      .container-header-hero .App-header .content-button-nav .close-icon {
+        opacity: 0; }
+      .container-header-hero .App-header .content-button-nav .close-icon.open {
+        opacity: 1; }
+  .container-header-hero .App-hero .App-hero-content .App-hero-content-info-action .App-hero-info {
+    align-items: flex-start;
+    width: 40vw;
+    height: auto;
+    padding-top: 10vh; }
+  .container-header-hero .App-hero .App-hero-content .App-hero-content-info-action .App-action .content-button-contact {
+    padding-top: 5vh; }
+    .container-header-hero .App-hero .App-hero-content .App-hero-content-info-action .App-action .content-button-contact button {
+      padding: 2vh 4vw; }
+  .container-header-hero .App-hero .App-hero-content .App-hero-content-image .content-image {
+    transform: translateY(-110vh) translateX(15%);
+    padding-top: 0vh; }
+    .container-header-hero .App-hero .App-hero-content .App-hero-content-image .content-image img {
+      transform: scale(0.8); }
+  .container-header-hero .App-hero .App-hero-content .App-hero-content-scroll {
+    opacity: 1;
+    transform: scale(0.7); }
+  .App-about-me {
+    padding: 40vh 0 60vh 0; }
+    .App-about-me .App-about-me-content .App-about-me-header .App-about-me-photo {
+      padding-top: 10vh; }
+      .App-about-me .App-about-me-content .App-about-me-header .App-about-me-photo img {
+        transform: scale(1) rotate(-25deg); }
+    .App-about-me .App-about-me-content .App-about-me-header .App-about-me-title {
+      text-align: end; }
+    .App-about-me .App-about-me-content .about-me-info {
+      padding: 10vh 25vw 10vh 2vw; }
+      .App-about-me .App-about-me-content .about-me-info p {
+        font-size: 18px; }
+    .App-about-me .App-about-me-content .wrapper-title-portfolio .about-me-title-portfolio {
+      background: url(../assets/rollo-portfolio.png);
+      background-size: cover;
+      color: #fcf8e8;
+      display: flex;
+      justify-content: center;
+      padding: 4vh 0;
+      margin-top: 20vh;
+      width: 50vw; }
+    .App-about-me .App-about-me-content .about-me-title-portfolio h1 {
+      font-weight: 600;
+      letter-spacing: 1px; }
+  .App-portfolio {
+    background-color: #ecb390; }
+    .App-portfolio .App-portfolio-content-img-title {
+      transform: translate(-15%, -25%) scale(1); }
+    .App-portfolio .App-portfolio-content-img-title img {
+      width: 100%; }
+  .App-portfolio-content-photos {
+    transform: scale(0.9); }
+    .App-portfolio-content-photos .portfolio-content-photos:nth-child(2n + 1) {
+      transform: rotate(4deg) translateY(-20%); }
+    .App-portfolio-content-photos .portfolio-content-photos:nth-child(2n + 2) {
+      transform: rotate(-3deg) scale(0.6); }
+  .App-testimony {
+    background-color: #374237;
+    padding: 20vh 0; }
+    .App-testimony .App-testimony-clients {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 20vh 5vw;
+      padding-top: 15vh; }
+    .App-testimony .App-testimony-header h1 {
+      color: #fcf8e8;
+      text-align: center;
+      font-size: calc(2vw + 3em);
+      font-weight: 600;
+      letter-spacing: 1px; }
+    .App-testimony .testimony:nth-child(1) {
+      transform: scale(0.8) rotate(-3deg) translateY(-10%); }
+    .App-testimony .testimony:nth-child(2) {
+      transform: scale(0.8) rotate(-2deg); }
+    .App-testimony .testimony:nth-child(3) {
+      transform: scale(0.8) rotate(2deg) translateY(10%); }
+    .App-testimony .testimony {
+      background: url(../assets/card-paper.png);
+      background-size: cover;
+      color: #24423b;
+      height: 70vh;
+      padding: 8vh 6vw;
+      margin-top: 6vh;
+      transform: scale(0.8); }
+      .App-testimony .testimony h4 {
+        padding-top: 2vh;
+        text-align: center;
+        font-size: calc(1.5em + 0.8vw);
+        letter-spacing: 1px; }
+  .wrapper-service-footer {
+    background: url(../assets/back-services.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #24423b;
+    padding: 10vh 0 0 0; }
+    .wrapper-service-footer .App-service-content-title {
+      text-align: center; }
+      .wrapper-service-footer .App-service-content-title .service-content-title h1 {
+        font-size: calc(2vw + 3em);
+        font-weight: 600;
+        letter-spacing: 1px; }
+      .wrapper-service-footer .App-service-content-title .service-content-title h4 {
+        font-size: 18px;
+        margin-top: 2vh;
+        font-weight: 500;
+        letter-spacing: 1px; }
+    .wrapper-service-footer .App-service-content-services {
+      padding: 10vh 10vw; }
+      .wrapper-service-footer .App-service-content-services .service .content-button-cita button {
+        padding: 2vh 5vw; }
+    .wrapper-service-footer .App-contact {
+      padding-top: 20vh; }
+      .wrapper-service-footer .App-contact .App-contact-content-form {
+        padding: 10vh 20vw; }
+        .wrapper-service-footer .App-contact .App-contact-content-form .content-button-send-mail button {
+          padding: 2vh 6vw; } }
+

@@ -58,7 +58,7 @@ body {
 }
 
 .container-header-hero {
-  background: url("../../assets/back-paper-hero.png");
+  background: url("../assets/back-paper-hero.png");
   background-size: cover;
   background-repeat: no-repeat;
   & .App-header {
@@ -257,7 +257,7 @@ body {
       display: flex;
       justify-content: flex-end;
       & .about-me-title-portfolio {
-        background: url("../../assets/rollo-portfolio.png");
+        background: url("../assets/rollo-portfolio.png");
         background-size: cover;
         color: map-get($colors, "primary-light");
         display: flex;
@@ -297,7 +297,7 @@ body {
       position: relative;
       aspect-ratio: 1/1;
       & .portfolio-content-paper {
-        background: url("../../assets/name-label.png");
+        background: url("../assets/name-label.png");
         background-size: cover;
         background-repeat: no-repeat;
         display: flex;
@@ -346,7 +346,7 @@ body {
     letter-spacing: 1px;
   }
   .testimony {
-    background: url("../../assets/card-paper.png");
+    background: url("../assets/card-paper.png");
     background-size: cover;
     color: map-get($colors, "primary-text");
     height: 60vh;
@@ -371,7 +371,7 @@ body {
 }
 
 .wrapper-service-footer {
-  background: url("../../assets/back-services.png");
+  background: url("../assets/back-services.png");
   background-size: cover;
   background-repeat: no-repeat;
   color: map-get($colors, "primary-text");
@@ -678,7 +678,7 @@ body {
       }
       & .wrapper-title-portfolio {
         & .about-me-title-portfolio {
-          background: url("../../assets/rollo-portfolio.png");
+          background: url("../assets/rollo-portfolio.png");
           background-size: cover;
           color: map-get($colors, "primary-light");
           display: flex;
@@ -749,7 +749,7 @@ body {
     }
 
     .testimony {
-      background: url("../../assets/card-paper.png");
+      background: url("../assets/card-paper.png");
       background-size: cover;
       color: map-get($colors, "primary-text");
       height: 70vh;
@@ -767,7 +767,7 @@ body {
 
   ///
   .wrapper-service-footer {
-    background: url("../../assets/back-services.png");
+    background: url("../assets/back-services.png");
     background-size: cover;
     background-repeat: no-repeat;
     color: map-get($colors, "primary-text");

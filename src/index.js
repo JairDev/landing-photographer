@@ -2,15 +2,17 @@ import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import "./styles/main.scss";
-import imagePortfolio1 from "../assets/photo1-port.png";
-import imagePortfolio2 from "../assets/photo2-port.png";
-import imagePortfolio3 from "../assets/photo3-port.png";
-import imagePortfolio4 from "../assets/photo4-port.png";
-import imagePortfolio5 from "../assets/photo5-port.png";
-import imagePortfolio6 from "../assets/photo6-port.png";
-import imagePortfolio7 from "../assets/photo7-port.png";
-import paperCard from "../assets/card-paper.png";
-import paperCardPortfolio from "../assets/name-label.png";
+import imagePortfolio1 from "./assets/photo1-port.png";
+import imagePortfolio2 from "./assets/photo2-port.png";
+import imagePortfolio3 from "./assets/photo3-port.png";
+import imagePortfolio4 from "./assets/photo4-port.png";
+import imagePortfolio5 from "./assets/photo5-port.png";
+import imagePortfolio6 from "./assets/photo6-port.png";
+import imagePortfolio7 from "./assets/photo7-port.png";
+import photosHeaderPortfolio from "./assets/photos-header-portfolio.png"
+import paperCard from "./assets/card-paper.png";
+import paperCardPortfolio from "./assets/name-label.png";
+import arrowScroll from "./assets/arrow-scroll.png"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -38,7 +40,7 @@ function validate() {
         error.classList.remove("show");
       });
   });
-  
+
   formContact.addEventListener("submit", (e) => {
     console.log(e);
     Array.from(input).forEach((value) => {
