@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "rimraf dist && webpack -p",
+    "build": "webpack",
     "start": "webpack serve --open"
   },
   "keywords": [],

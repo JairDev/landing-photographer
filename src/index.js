@@ -18,6 +18,90 @@ const portfolioNode = document.querySelector(".App-portfolio-content-photos");
 const testimonyNode = document.querySelector(".App-testimony-clients");
 const serviceNode = document.querySelector(".App-service-content-services");
 
+function validate() {
+  const formContact = document.getElementById("form-contact");
+  const input = document.querySelectorAll(".input-validate");
+  const error = document.getElementById("error-message");
+  const errorSubmit = document.getElementById("error-submit");
+
+  Array.from(input).forEach((value) => {
+    value.addEventListener("input", (e) => {
+      if (value.type === "email") {
+        if (!e.target.value.includes("@")) {
+          error.classList.add("show");
+        } else {
+          error.classList.remove("show");
+        }
+      }
+    }),
+      value.addEventListener("change", (e) => {
+        error.classList.remove("show");
+      });
+  });
+  
+  formContact.addEventListener("submit", (e) => {
+    console.log(e);
+    Array.from(input).forEach((value) => {
+      if (!value.value) {
+        errorSubmit.classList.add("show")
+      }else {
+        errorSubmit.classList.remove("show")
+      }
+    });
+
+    e.preventDefault();
+  });
+}
+
+validate();
+
+// class Subject {
+//   constructor() {
+//     this.observers = []
+//   }
+
+//   subscribe(observer) {
+//     this.observers.push(observer)
+//   }
+
+//   unSubscribe(observer) {
+//     this.observers = this.observers.filter(element => element !== 0)
+//   }
+
+//   notify(object) {
+//     this.observers.forEach(observer  => {
+//       observer.notify(object)
+//     })
+//   }
+// }
+
+// class  TextSubject extends Subject {
+//   constructor() {
+//     super();
+//     this.text = ""
+//   }
+
+//   notify(text) {
+//     this.text = text
+//     super.notify(this)
+//   }
+// }
+
+// class Observer {
+//   notify(object) {
+//     document.getElementById("error-message").innerHTML = object.text
+//     // console.log(object.text)
+//   }
+// }
+
+// const text = new TextSubject()
+// let miDiv = new Observer()
+// text.subscribe(miDiv)
+
+// document.getElementById("validate").addEventListener("input", (event) => {
+//   text.notify(event.target.value)
+// })
+
 const dataPortfolio = [
   { name: "Abigail", src: imagePortfolio1 },
   { name: "Antonio", src: imagePortfolio2 },
@@ -82,6 +166,7 @@ dataPortfolio.forEach((photos) => {
   const title = document.createElement("h6");
   const img = document.createElement("img");
   div.setAttribute("class", "portfolio-content-photos");
+  div.setAttribute("id", "photos-show-portfolio");
   divContentTitle.setAttribute("class", "portfolio-content-paper");
   title.textContent = photos.name;
   img.setAttribute("src", photos.src);
@@ -147,6 +232,9 @@ serviceNode.appendChild(fragmentService);
 window.addEventListener("load", (e) => {
   const photo = document.getElementById("rotate-photo");
   const header = document.getElementById("header-translate");
+  const portfolio = document.querySelector(
+    "#photos-show-portfolio:first-child"
+  );
 
   const tlHeader = gsap.timeline({
     scrollTrigger: {
@@ -166,6 +254,20 @@ window.addEventListener("load", (e) => {
       scrub: true,
       // markers: true
     },
+  });
+  const tlPhotoPortfolio = gsap.timeline({
+    scrollTrigger: {
+      trigger: portfolio,
+      start: "-=100 top",
+      end: "10% -=100",
+      // scrub: true,
+      // markers: true
+    },
+  });
+  tlPhotoPortfolio.from(portfolio, {
+    rotate: -35,
+    yPercent: -150,
+    duration: 0.5,
   });
   //animations////////////////////
   if (window.innerWidth > 768) {
@@ -194,12 +296,12 @@ document.addEventListener("click", (e) => {
   if (buttonNavTarget) {
     if (open) {
       menu.classList.add("open");
-      buttonNavTargetOpen.classList.add("close")
-      buttonNavTargetClose.classList.add("open")
-    }else {
+      buttonNavTargetOpen.classList.add("close");
+      buttonNavTargetClose.classList.add("open");
+    } else {
       menu.classList.remove("open");
-      buttonNavTargetOpen.classList.remove("close")
-      buttonNavTargetClose.classList.remove("open")
+      buttonNavTargetOpen.classList.remove("close");
+      buttonNavTargetClose.classList.remove("open");
     }
   }
 });

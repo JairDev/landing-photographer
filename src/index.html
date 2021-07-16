@@ -1,10 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Fotógrafo Martino Vizcays</title>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Martino Vizcays</title>
+        <!-- Primary Meta Tags -->
+    <meta name="title" content="Fotógrafo Martino Vizcays">
+    <meta name="description" content="Este sitio web, es un portafolio de un fotógrafo profesional, especializado en fotografía de portaretrato y modelos">
+    <meta name="author" content="Alfredo Moscoso" />
+    <meta name="copyright" content="Alfredo Moscoso" />
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -137,15 +143,16 @@
                 <h1>Trabajemos juntos</h1>
               </div>
               <div class="App-contact-content-form">
-                <form action=""></form>
+                <form id="form-contact" action="">
                   <div class="content-input">
                     <div>
                       <label for="">Nombre</label>
-                      <input type="text" placeholder="E.g Jhon Doe" />
+                      <input id="validate" class="input-validate" type="text" placeholder="E.g Jhon Doe" />
                     </div>
                     <div>
                       <label for="">Correo elecrónico</label>
-                      <input type="text" placeholder="E.g jhon@gmail.com" />
+                      <input class="input-validate" type="email" placeholder="E.g jhon@gmail.com" />
+                      <span id="error-message">Introduzca un correo válido, debe contener @</span>
                     </div>
                     <div>
                       <label for="">Tu mensaje:</label>
@@ -154,6 +161,7 @@
                   </div>
                   <div class="content-button-send-mail">
                     <button>Enviar</button>
+                    <span id="error-submit">Por favor, completa todos los campos</span>
                   </div>
                 </form>
               </div>
@@ -178,6 +186,11 @@
                     data-icon="akar-icons:instagram-fill"
                     style="color: #24423b; font-size: 48px"
                   ></span>
+                </div>
+              </div>
+              <div class="App-footer-content-derechos">
+                <div class="autor">
+                  <h6>Desarrollado por Alfredo Moscoso</h6>
                 </div>
               </div>
             </div>
