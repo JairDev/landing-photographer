@@ -32,7 +32,7 @@ body {
   padding: 0 4vw; }
 
 .container-header-hero {
-  background: url(../img/back-paper-hero.png);
+  background: url(../assets/back-paper-hero.png);
   background-size: cover;
   background-repeat: no-repeat; }
   .container-header-hero .App-header {
@@ -181,7 +181,7 @@ body {
     display: flex;
     justify-content: flex-end; }
     .App-about-me .App-about-me-content .wrapper-title-portfolio .about-me-title-portfolio {
-      background: url(../img/rollo-portfolio.png);
+      background: url(../assets/rollo-portfolio.png);
       background-size: cover;
       color: #fcf8e8;
       display: flex;
@@ -211,7 +211,7 @@ body {
       position: relative;
       aspect-ratio: 1/1; }
       .App-portfolio .App-portfolio-content-photos .portfolio-content-photos .portfolio-content-paper {
-        background: url(../img/name-label.png);
+        background: url(../assets/name-label.png);
         background-size: cover;
         background-repeat: no-repeat;
         display: flex;
@@ -247,7 +247,7 @@ body {
     font-weight: 600;
     letter-spacing: 1px; }
   .App-testimony .testimony {
-    background: url(../img/card-paper.png);
+    background: url(../assets/card-paper.png);
     background-size: cover;
     color: #24423b;
     height: 60vh;
@@ -266,7 +266,7 @@ body {
         letter-spacing: 1px; }
 
 .wrapper-service-footer {
-  background: url(../img/back-services.png);
+  background: url(../assets/back-services.png);
   background-size: cover;
   background-repeat: no-repeat;
   color: #24423b;
@@ -479,7 +479,7 @@ body {
       .App-about-me .App-about-me-content .about-me-info p {
         font-size: 18px; }
     .App-about-me .App-about-me-content .wrapper-title-portfolio .about-me-title-portfolio {
-      background: url(../img/rollo-portfolio.png);
+      background: url(../assets/rollo-portfolio.png);
       background-size: cover;
       color: #fcf8e8;
       display: flex;
@@ -523,7 +523,7 @@ body {
     .App-testimony .testimony:nth-child(3) {
       transform: scale(0.8) rotate(2deg) translateY(10%); }
     .App-testimony .testimony {
-      background: url(../img/card-paper.png);
+      background: url(../assets/card-paper.png);
       background-size: cover;
       color: #24423b;
       height: 70vh;
@@ -536,7 +536,7 @@ body {
         font-size: calc(1.5em + 0.8vw);
         letter-spacing: 1px; }
   .wrapper-service-footer {
-    background: url(../img/back-services.png);
+    background: url(../assets/back-services.png);
     background-size: cover;
     background-repeat: no-repeat;
     color: #24423b;
