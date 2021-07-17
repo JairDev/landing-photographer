@@ -99,7 +99,7 @@ body {
     .content-button-nav {
       // border: 2px solid red;
       position: absolute;
-      top: 3vh;
+      top: 1vh;
       right: 3vw;
       width: 48px;
       height: 48px;
@@ -224,7 +224,7 @@ body {
 
 .App-about-me {
   background-color: map-get($colors, "complementary-light");
-  padding: 10vh 0 40vh 0;
+  padding: 40vh 0 60vh 0;
   & .App-about-me-content {
     & .App-about-me-header {
       display: flex;
@@ -266,7 +266,7 @@ body {
         color: map-get($colors, "primary-light");
         display: flex;
         justify-content: center;
-        padding: 2vh 0;
+        padding: 2vh 3vw;
         margin-top: 20vh;
       }
     }
@@ -350,11 +350,14 @@ body {
     letter-spacing: 1px;
   }
   .testimony {
+    // border: 2px solid yellow;
     background: url("../assets/card-paper.png");
-    background-size: cover;
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
     color: map-get($colors, "primary-text");
-    height: 60vh;
-    padding: 8vh 6vw;
+    // height: 60vh;
+    padding: 20vh 6vw;
     // margin-top: 6vh;
     transform: scale(.8);
     & h4 {
@@ -435,6 +438,7 @@ body {
           border: 2px solid map-get($colors, "accent-light");
           border-radius: 50px;
           color: map-get($colors, "primary-text");
+          cursor: pointer;
           font-size: map-get($font-size, "main-font");
           font-weight: 600;
           padding: 2vh 12vw;
@@ -502,6 +506,7 @@ body {
           background-color: map-get($colors, "accent-light");
           border-radius: 50px;
           color: map-get($colors, "primary-text");
+          cursor: pointer;
           font-size: map-get($font-size, "main-font");
           font-weight: 600;
           padding: 2vh 12vw;
@@ -539,6 +544,9 @@ body {
       display: flex;
       justify-content: space-around;
       width: 50%;
+      & .content-twitter, & .content-instagram {
+        cursor: pointer;
+      }
     }
     & .App-footer-content-derechos {
       padding-top: 5vh;
@@ -753,19 +761,19 @@ body {
     }
 
     .testimony {
-      background: url("../assets/card-paper.png");
-      background-size: cover;
-      color: map-get($colors, "primary-text");
-      height: 70vh;
-      padding: 8vh 6vw;
-      margin-top: 6vh;
-      transform: scale(0.8);
-      & h4 {
-        padding-top: 2vh;
-        text-align: center;
-        font-size: map-get($font-size, "header-card");
-        letter-spacing: 1px;
-      }
+      // background: url("../assets/card-paper.png");
+      // background-size: cover;
+      // color: map-get($colors, "primary-text");
+      // height: 70vh;
+      // padding: 8vh 6vw;
+      // margin-top: 6vh;
+      // transform: scale(0.8);
+      // & h4 {
+      //   padding-top: 2vh;
+      //   text-align: center;
+      //   font-size: map-get($font-size, "header-card");
+      //   letter-spacing: 1px;
+      // }
     }
   }
 

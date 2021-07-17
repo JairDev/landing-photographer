@@ -16,6 +16,7 @@ import "./assets/arrow-scroll.png";
 import "./assets/photos-hero.png";
 import "./assets/photo-3d-profile.png";
 import "./assets/placeholder-image.jpg";
+import "./assets/link-border-nav.png"
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -39,7 +40,7 @@ function validate() {
         }
       }
     }),
-      value.addEventListener("change", (e) => {
+      value.addEventListener("change", () => {
         error.classList.remove("show");
       });
   });
@@ -60,53 +61,6 @@ function validate() {
 
 validate();
 
-// class Subject {
-//   constructor() {
-//     this.observers = []
-//   }
-
-//   subscribe(observer) {
-//     this.observers.push(observer)
-//   }
-
-//   unSubscribe(observer) {
-//     this.observers = this.observers.filter(element => element !== 0)
-//   }
-
-//   notify(object) {
-//     this.observers.forEach(observer  => {
-//       observer.notify(object)
-//     })
-//   }
-// }
-
-// class  TextSubject extends Subject {
-//   constructor() {
-//     super();
-//     this.text = ""
-//   }
-
-//   notify(text) {
-//     this.text = text
-//     super.notify(this)
-//   }
-// }
-
-// class Observer {
-//   notify(object) {
-//     document.getElementById("error-message").innerHTML = object.text
-//     // console.log(object.text)
-//   }
-// }
-
-// const text = new TextSubject()
-// let miDiv = new Observer()
-// text.subscribe(miDiv)
-
-// document.getElementById("validate").addEventListener("input", (event) => {
-//   text.notify(event.target.value)
-// })
-
 const dataPortfolio = [
   { name: "Abigail", src: imagePortfolio1 },
   { name: "Antonio", src: imagePortfolio2 },
@@ -119,21 +73,21 @@ const dataPortfolio = [
 
 const dataTestimony = [
   {
-    name: "Arquette Duen",
+    name: "Arquette",
     testimony:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the  industry's standard dummy text ever since the 1500s",
+      "Excelente profesional, me sentí a gusto trabajando con el",
     src: paperCard,
   },
   {
-    name: "Kialsd Sths",
+    name: "Nairobi",
     testimony:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the  industry's standard dummy text ever since the 1500s",
+      "Recomendado al 100%, muy tratable y profesional",
     src: paperCard,
   },
   {
-    name: "Kierñ Lekjr",
+    name: "Sofía",
     testimony:
-      "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the  industry's standard dummy text ever since the 1500s",
+      "Me encantó trabajar con el, es como si lo conociera de toda la vida",
     src: paperCard,
   },
 ];
@@ -152,10 +106,10 @@ const dataService = [
   {
     title: "Paquete",
     services: {
-      dvd: "1 DVD de 30 fotos digitales",
-      sesion: "1 hora de sesión fotográfica",
-      vestuario: "2 cambios de vestuario",
-      fotos: "3 fotos impresas",
+      dvd: "1 DVD de 80 fotos digitales",
+      sesion: "3 hora de sesión fotográfica",
+      vestuario: "5 cambios de vestuario",
+      fotos: "10 fotos impresas",
     },
     price: 80,
   },
@@ -176,8 +130,8 @@ dataPortfolio.forEach((photos) => {
   title.textContent = photos.name;
   img.setAttribute("src", "./assets/placeholder-image.jpg");
   img.setAttribute("data-src", photos.src);
-  img.setAttribute("alt", "Fotografía de una persona");
-  // img.setAttribute("id", "show-data");
+  img.setAttribute("alt", "Fotografía de una persona o personas");
+  img.setAttribute("id", "show-data");
   div.appendChild(img);
   div.appendChild(divContentTitle);
   divContentTitle.appendChild(title);
@@ -238,12 +192,12 @@ serviceNode.appendChild(fragmentService);
 
 window.addEventListener("load", (e) => {
   const hiddenData = document.querySelectorAll("#show-data");
-  const photo = document.getElementById("rotate-photo");
+  const photo = document.querySelector(".rotate-photo");
   const header = document.getElementById("header-translate");
   const portfolio = document.querySelector(
     "#photos-show-portfolio:first-child"
   );
-
+  console.log(photo)
   const tlHeader = gsap.timeline({
     scrollTrigger: {
       trigger: header,
