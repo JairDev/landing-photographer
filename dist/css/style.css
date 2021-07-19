@@ -187,7 +187,8 @@ html {
   .App-about-me .App-about-me-content .wrapper-title-portfolio {
     position: relative;
     display: flex;
-    justify-content: flex-end; }
+    justify-content: flex-end;
+    transform: translateX(5vw); }
     .App-about-me .App-about-me-content .wrapper-title-portfolio .about-me-title-portfolio {
       background: url(../assets/rollo-portfolio.png);
       background-size: cover;
@@ -502,9 +503,9 @@ html {
       color: #fcf8e8;
       display: flex;
       justify-content: center;
-      padding: 4vh 0;
+      padding: 6vh 0;
       margin-top: 20vh;
-      width: 50vw; }
+      width: 60vw; }
     .App-about-me .App-about-me-content .about-me-title-portfolio h1 {
       font-weight: 600;
       letter-spacing: 1px; }
@@ -539,7 +540,7 @@ html {
     .App-testimony .testimony:nth-child(1) {
       transform: scale(0.8) rotate(-3deg) translateY(-10%); }
     .App-testimony .testimony:nth-child(2) {
-      transform: scale(0.8) rotate(-2deg); }
+      transform: scale(0.8) rotate(0deg); }
     .App-testimony .testimony:nth-child(3) {
       transform: scale(0.8) rotate(2deg) translateY(10%); }
   .wrapper-service-footer {
@@ -566,7 +567,7 @@ html {
     .wrapper-service-footer .App-contact {
       padding-top: 20vh; }
       .wrapper-service-footer .App-contact .App-contact-content-form {
-        padding: 10vh 15vw; }
+        padding: 10vh 20vw; }
         .wrapper-service-footer .App-contact .App-contact-content-form .content-button-send-mail button {
           padding: 2vh 6vw; } }
 
