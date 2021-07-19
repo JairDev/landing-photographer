@@ -1,16 +1,17 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin");
 
 module.exports = {
-  mode: 'development',
+  mode: "development",
   entry: {
     index: "./src/index.js",
     // menu: "./src/menu.js"
   },
   output: {
     path: path.resolve(__dirname, "dist"),
-    filename: "js/[name].bundle.js"
+    filename: "js/[name].bundle.js",
   },
   // optimization: {
   //   splitChunks: {
@@ -19,10 +20,10 @@ module.exports = {
   //   }
   // },
   plugins: [
-    new HtmlWebpackPlugin({  
+    new HtmlWebpackPlugin({
       filename: "index.html",
       template: "./src/index.html",
-      title: 'Development',
+      title: "Development",
       // inject: true,
       // chunks: ["index"]
 
@@ -32,8 +33,8 @@ module.exports = {
         removeRedundantAttributes: true,
         removeScriptTypeAttributes: true,
         removeStyleLinkTypeAttributes: true,
-        useShortDoctype: true
-      }
+        useShortDoctype: true,
+      },
     }),
     // new HtmlWebpackPlugin({
     //   filename: "menu.html",
@@ -43,7 +44,36 @@ module.exports = {
     // }),
     new MiniCssExtractPlugin({
       filename: "css/style.css",
-    })
+    }),
+    new ImageMinimizerPlugin({
+      minimizerOptions: {
+        // Lossless optimization with custom option
+        // Feel free to experiment with options for better result for you
+        plugins: [
+          // ["gifsicle", { interlaced: true }],
+          ["jpegtran", { progressive: true }],
+          ["optipng", { optimizationLevel: 7 }],
+          // Svgo configuration here https://github.com/svg/svgo#configuration
+          // [
+          //   "svgo",
+          //   {
+          //     plugins: extendDefaultPlugins([
+          //       {
+          //         name: "removeViewBox",
+          //         active: false,
+          //       },
+          //       {
+          //         name: "addAttributesToSVGElement",
+          //         params: {
+          //           attributes: [{ xmlns: "http://www.w3.org/2000/svg" }],
+          //         },
+          //       },
+          //     ]),
+          //   },
+          // ],
+        ],
+      },
+    }),
   ],
 
   module: {
@@ -54,11 +84,11 @@ module.exports = {
           {
             loader: MiniCssExtractPlugin.loader,
             options: {
-              publicPath: '../',
+              publicPath: "../",
             },
           },
           "css-loader",
-          "sass-loader"
+          "sass-loader",
         ],
       },
       {
@@ -70,9 +100,9 @@ module.exports = {
               name: "[name].[ext]",
               outputPath: "assets/",
               useRelativePath: true,
-            }
-          }
-        ]
+            },
+          },
+        ],
       },
       {
         test: /\.(mp3)$/,
@@ -83,9 +113,9 @@ module.exports = {
               name: "[name].[ext]",
               outputPath: "sound/",
               useRelativePath: true,
-            }
-          }
-        ]
+            },
+          },
+        ],
       },
       // {
       //   test: /\.html$/,
@@ -105,12 +135,12 @@ module.exports = {
         test: /\.m?js$/,
         exclude: /(node_modules|bower_components)/,
         use: {
-          loader: 'babel-loader',
+          loader: "babel-loader",
           options: {
-            presets: ['@babel/preset-env'],
-          }
-        }
-      }
+            presets: ["@babel/preset-env"],
+          },
+        },
+      },
     ],
   },
 };

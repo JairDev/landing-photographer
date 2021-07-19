@@ -6,6 +6,7 @@ import "./assets/photos-header-portfolio.png";
 import "./assets/name-label.png";
 import "./assets/arrow-scroll.png";
 import "./assets/photos-hero.png";
+// import "./assets/photos-hero.webp";
 import "./assets/photo-3d-profile.png";
 import "./assets/placeholder-image.jpg";
 import "./assets/link-border-nav.png";
