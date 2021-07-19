@@ -3,8 +3,13 @@
   padding: 0;
   margin: 0;
 }
+
 li {
   list-style: none;
+}
+
+a {
+  text-decoration: none;
 }
 
 $colors: (
@@ -35,9 +40,14 @@ body {
   font-family: "Poppins", sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 .container {
   overflow: hidden;
   position: relative;
+  // overflow-y: scroll;
 }
 
 .container::before {
@@ -55,10 +65,6 @@ body {
 
 .space-style {
   padding: 0 4vw;
-}
-
-#show-data {
-  // display: none;
 }
 
 .container-header-hero {
@@ -88,7 +94,7 @@ body {
       align-items: center;
       width: 100%;
       height: 100%;
-      & .nav-link {
+      & .nav-link a {
         cursor: pointer;
         color: map-get($colors, "primary-text");
         font-size: map-get($font-size, "main-font");
@@ -174,9 +180,10 @@ body {
               background-color: map-get($colors, "accent-light");
               border-radius: 50px;
               cursor: pointer;
-              color: map-get($colors, "primary-text");
+              color: map-get($colors, "primary-dark");
               font-size: map-get($font-size, "main-font");
               font-weight: 600;
+              letter-spacing: 1px;
               padding: 2vh 12vw;
             }
           }
@@ -187,7 +194,6 @@ body {
           height: 100vh;
           width: 100%;
           position: relative;
-          // transform: translateY(-100vh);
           transform: translateY(-90vh) translateX(15%);
           padding-top: 30vh;
           & img {
@@ -198,7 +204,6 @@ body {
       }
 
       & .App-hero-content-scroll {
-        // border: 2px solid rgb(6, 42, 14);
         border-radius: 100px ;
         display: flex;
         justify-content: center;
@@ -231,6 +236,7 @@ body {
       flex-direction: column-reverse;
 
       & .App-about-me-photo {
+        align-self: flex-start;
         padding-top: 10vh;
         transform: scale(0.8);
       }
@@ -295,11 +301,13 @@ body {
     gap: 20vh 7vw;
     transform: scale(0.8);
     & .portfolio-content-photos {
+      // border: 1px solid red;
       display: flex;
       justify-content: center;
       margin-top: 14vh;
       position: relative;
       aspect-ratio: 1/1;
+      transition: all ease .2s;
       & .portfolio-content-paper {
         background: url("../assets/name-label.png");
         background-size: cover;
@@ -307,7 +315,6 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        // border: 2px solid red;
         position: absolute;
         top: -75px;
         width: 220px;
@@ -320,10 +327,14 @@ body {
         }
       }
       & img {
-        width: 100%;
-        
         object-fit: contain;
+        width: 100%;
+        transition: all linear .3s;
       }
+    }
+    & .portfolio-content-photos:hover {
+      // border: 2px solid red;
+      // transform: scale(1.5);
     }
     & .portfolio-content-photos:first-child {
       margin: 0;
@@ -350,15 +361,11 @@ body {
     letter-spacing: 1px;
   }
   .testimony {
-    // border: 2px solid yellow;
     background: url("../assets/card-paper.png");
-    background-size: contain;
-    background-position: center;
+    background-size: cover;
     background-repeat: no-repeat;
     color: map-get($colors, "primary-text");
-    // height: 60vh;
     padding: 20vh 6vw;
-    // margin-top: 6vh;
     transform: scale(.8);
     & h4 {
       padding-top: 2vh;
@@ -401,13 +408,13 @@ body {
 
   .App-service-content-services {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 10vh 10vw;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10vh 15vw;
     padding-top: 10vh;
 
     & .service {
       background-color: map-get($colors, "primary-light");
-      border-radius: 4px;
+      border-radius: 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -420,7 +427,7 @@ body {
       }
       & ul li {
         padding: 2vh 2vw;
-        margin-top: 4vh;
+        margin-top: 2vh;
         font-size: map-get($font-size, "main-font");
       }
       & .content-price {
@@ -441,7 +448,7 @@ body {
           cursor: pointer;
           font-size: map-get($font-size, "main-font");
           font-weight: 600;
-          padding: 2vh 12vw;
+          padding: 2vh 10vw;
         }
       }
     }
@@ -476,13 +483,20 @@ body {
         }
         & input {
           border-radius: 50px;
+          padding: 1.5vh 1.5vw;
+
+        }
+        & textarea {
+          border-radius: 20px ;
+          padding: 2vh 1.5vw;
+
         }
         & input,
         & textarea {
           background-color: map-get($colors, "back-input");
           border: 0px;
           font-size: 17px;
-          padding: 1.5vh 2vw;
+          // padding: 1.5vh 2vw;
           width: 100%;
         }
         & div,
@@ -505,10 +519,11 @@ body {
           background: none;
           background-color: map-get($colors, "accent-light");
           border-radius: 50px;
-          color: map-get($colors, "primary-text");
+          color: map-get($colors, "primary-dark");
           cursor: pointer;
           font-size: map-get($font-size, "main-font");
           font-weight: 600;
+          letter-spacing: 1px;
           padding: 2vh 12vw;
         }
         & #error-submit {
@@ -728,6 +743,11 @@ body {
     & .portfolio-content-photos:nth-child(2n + 2) {
       transform: rotate(-3deg) scale(0.6);
     }
+
+    & .portfolio-content-photos:hover {
+      // border: 2px solid red;
+      transform: scale(1.4);
+    }
   }
 
   .App-testimony {
@@ -760,21 +780,6 @@ body {
       transform: scale(0.8) rotate(2deg) translateY(10%);
     }
 
-    .testimony {
-      // background: url("../assets/card-paper.png");
-      // background-size: cover;
-      // color: map-get($colors, "primary-text");
-      // height: 70vh;
-      // padding: 8vh 6vw;
-      // margin-top: 6vh;
-      // transform: scale(0.8);
-      // & h4 {
-      //   padding-top: 2vh;
-      //   text-align: center;
-      //   font-size: map-get($font-size, "header-card");
-      //   letter-spacing: 1px;
-      // }
-    }
   }
 
   ///
@@ -813,7 +818,7 @@ body {
     & .App-contact {
       padding-top: 20vh;
       .App-contact-content-form {
-        padding: 10vh 20vw;
+        padding: 10vh 15vw;
         .content-button-send-mail {
           & button {
             padding: 2vh 6vw;

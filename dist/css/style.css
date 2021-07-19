@@ -9,8 +9,14 @@
 li {
   list-style: none; }
 
+a {
+  text-decoration: none; }
+
 body {
   font-family: "Poppins", sans-serif; }
+
+html {
+  scroll-behavior: smooth; }
 
 .container {
   overflow: hidden;
@@ -54,7 +60,7 @@ body {
       align-items: center;
       width: 100%;
       height: 100%; }
-      .container-header-hero .App-header .App-nav-content-links .nav-link {
+      .container-header-hero .App-header .App-nav-content-links .nav-link a {
         cursor: pointer;
         color: #24423b;
         font-size: 18px;
@@ -121,9 +127,10 @@ body {
               background-color: #df7861;
               border-radius: 50px;
               cursor: pointer;
-              color: #24423b;
+              color: #2e2914;
               font-size: 18px;
               font-weight: 600;
+              letter-spacing: 1px;
               padding: 2vh 12vw; }
       .container-header-hero .App-hero .App-hero-content .App-hero-content-image .content-image {
         height: 100vh;
@@ -158,6 +165,7 @@ body {
     display: flex;
     flex-direction: column-reverse; }
     .App-about-me .App-about-me-content .App-about-me-header .App-about-me-photo {
+      align-self: flex-start;
       padding-top: 10vh;
       transform: scale(0.8); }
     .App-about-me .App-about-me-content .App-about-me-header .App-about-me-title {
@@ -209,7 +217,8 @@ body {
       justify-content: center;
       margin-top: 14vh;
       position: relative;
-      aspect-ratio: 1/1; }
+      aspect-ratio: 1/1;
+      transition: all ease .2s; }
       .App-portfolio .App-portfolio-content-photos .portfolio-content-photos .portfolio-content-paper {
         background: url(../assets/name-label.png);
         background-size: cover;
@@ -227,8 +236,9 @@ body {
           font-weight: 500;
           letter-spacing: 1px; }
       .App-portfolio .App-portfolio-content-photos .portfolio-content-photos img {
+        object-fit: contain;
         width: 100%;
-        object-fit: contain; }
+        transition: all linear .3s; }
     .App-portfolio .App-portfolio-content-photos .portfolio-content-photos:first-child {
       margin: 0; }
 
@@ -248,8 +258,7 @@ body {
     letter-spacing: 1px; }
   .App-testimony .testimony {
     background: url(../assets/card-paper.png);
-    background-size: contain;
-    background-position: center;
+    background-size: cover;
     background-repeat: no-repeat;
     color: #24423b;
     padding: 20vh 6vw;
@@ -285,12 +294,12 @@ body {
       letter-spacing: 1px; }
   .wrapper-service-footer .App-service-content-services {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-    gap: 10vh 10vw;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 10vh 15vw;
     padding-top: 10vh; }
     .wrapper-service-footer .App-service-content-services .service {
       background-color: #fcf8e8;
-      border-radius: 4px;
+      border-radius: 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -302,7 +311,7 @@ body {
         letter-spacing: 1px; }
       .wrapper-service-footer .App-service-content-services .service ul li {
         padding: 2vh 2vw;
-        margin-top: 4vh;
+        margin-top: 2vh;
         font-size: 18px; }
       .wrapper-service-footer .App-service-content-services .service .content-price {
         padding-top: 6vh; }
@@ -320,7 +329,7 @@ body {
           cursor: pointer;
           font-size: 18px;
           font-weight: 600;
-          padding: 2vh 12vw; }
+          padding: 2vh 10vw; }
   .wrapper-service-footer .App-contact {
     padding-top: 20vh; }
     .wrapper-service-footer .App-contact .App-contact-content-title {
@@ -342,13 +351,16 @@ body {
       .wrapper-service-footer .App-contact .App-contact-content-form .content-input #error-message.show {
         opacity: 1; }
       .wrapper-service-footer .App-contact .App-contact-content-form .content-input input {
-        border-radius: 50px; }
+        border-radius: 50px;
+        padding: 1.5vh 1.5vw; }
+      .wrapper-service-footer .App-contact .App-contact-content-form .content-input textarea {
+        border-radius: 20px;
+        padding: 2vh 1.5vw; }
       .wrapper-service-footer .App-contact .App-contact-content-form .content-input input,
       .wrapper-service-footer .App-contact .App-contact-content-form .content-input textarea {
         background-color: #fdf4e8;
         border: 0px;
         font-size: 17px;
-        padding: 1.5vh 2vw;
         width: 100%; }
       .wrapper-service-footer .App-contact .App-contact-content-form .content-input div,
       .wrapper-service-footer .App-contact .App-contact-content-form .content-input label {
@@ -367,10 +379,11 @@ body {
           background: none;
           background-color: #df7861;
           border-radius: 50px;
-          color: #24423b;
+          color: #2e2914;
           cursor: pointer;
           font-size: 18px;
           font-weight: 600;
+          letter-spacing: 1px;
           padding: 2vh 12vw; }
         .wrapper-service-footer .App-contact .App-contact-content-form .content-button-send-mail #error-submit {
           color: #c81f1f;
@@ -507,6 +520,8 @@ body {
       transform: rotate(4deg) translateY(-20%); }
     .App-portfolio-content-photos .portfolio-content-photos:nth-child(2n + 2) {
       transform: rotate(-3deg) scale(0.6); }
+    .App-portfolio-content-photos .portfolio-content-photos:hover {
+      transform: scale(1.4); }
   .App-testimony {
     background-color: #374237;
     padding: 20vh 0; }
@@ -551,7 +566,7 @@ body {
     .wrapper-service-footer .App-contact {
       padding-top: 20vh; }
       .wrapper-service-footer .App-contact .App-contact-content-form {
-        padding: 10vh 20vw; }
+        padding: 10vh 15vw; }
         .wrapper-service-footer .App-contact .App-contact-content-form .content-button-send-mail button {
           padding: 2vh 6vw; } }
 
