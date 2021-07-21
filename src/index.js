@@ -116,7 +116,7 @@ window.addEventListener("load", (e) => {
   const tlPhotoPortfolio = gsap.timeline({
     scrollTrigger: {
       trigger: photoPortfolio,
-      start: "-=50 15%",
+      start: "-=30 30%",
       end: "10% -=100",
       // scrub: true,
       // markers: true
