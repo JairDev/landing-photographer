@@ -90,8 +90,10 @@ html {
     padding-top: 2vh; }
     .container-header-hero .App-hero .App-hero-content {
       height: 100%;
+      padding-top: 4vh;
       position: relative; }
       .container-header-hero .App-hero .App-hero-content .App-hero-content-info-action {
+        width: 100%;
         height: 100%;
         position: relative;
         z-index: 100; }
@@ -132,27 +134,22 @@ html {
               font-weight: 600;
               letter-spacing: 1px;
               padding: 2vh 12vw; }
-      .container-header-hero .App-hero .App-hero-content .App-hero-content-image .content-image {
-        height: 100vh;
-        width: 100%;
-        position: relative;
-        transform: translateY(-90vh) translateX(15%);
-        padding-top: 30vh; }
-        .container-header-hero .App-hero .App-hero-content .App-hero-content-image .content-image img {
+      .container-header-hero .App-hero .App-hero-content .App-hero-content-image {
+        opacity: 0; }
+        .container-header-hero .App-hero .App-hero-content .App-hero-content-image .content-image {
           width: 100%;
-          transform: scale(1.8); }
+          position: relative; }
+          .container-header-hero .App-hero .App-hero-content .App-hero-content-image .content-image img {
+            width: 100%; }
       .container-header-hero .App-hero .App-hero-content .App-hero-content-scroll {
         border-radius: 100px;
         display: flex;
         justify-content: center;
         align-items: center;
         position: absolute;
-        left: 0;
         bottom: 10vh;
-        width: 150px;
-        height: 150px;
-        opacity: 0;
-        transform: rotate(-20px); }
+        height: 80px;
+        opacity: 0; }
         .container-header-hero .App-hero .App-hero-content .App-hero-content-scroll img {
           width: 100%;
           height: 100%;
@@ -160,21 +157,21 @@ html {
 
 .App-about-me {
   background-color: #d4e2d4;
-  padding: 40vh 0 60vh 0; }
+  padding: 30vh 0 60vh 0; }
   .App-about-me .App-about-me-content .App-about-me-header {
     display: flex;
-    flex-direction: column-reverse; }
+    justify-content: center;
+    flex-wrap: wrap; }
     .App-about-me .App-about-me-content .App-about-me-header .App-about-me-photo {
-      align-self: flex-start;
-      padding-top: 10vh;
-      transform: scale(0.8); }
-    .App-about-me .App-about-me-content .App-about-me-header .App-about-me-title {
-      text-align: end; }
-      .App-about-me .App-about-me-content .App-about-me-header .App-about-me-title h1 {
-        color: #24423b;
-        font-size: calc(2vw + 3em);
-        font-weight: 600;
-        letter-spacing: 1px; }
+      padding-top: 15vh; }
+      .App-about-me .App-about-me-content .App-about-me-header .App-about-me-photo img {
+        width: 100%;
+        height: 100%; }
+    .App-about-me .App-about-me-content .App-about-me-header .App-about-me-title h1 {
+      color: #24423b;
+      font-size: calc(2vw + 3em);
+      font-weight: 600;
+      letter-spacing: 1px; }
   .App-about-me .App-about-me-content .about-me-info {
     padding-top: 10vh; }
     .App-about-me .App-about-me-content .about-me-info p {
@@ -430,7 +427,7 @@ html {
 
 @media only screen and (min-width: 1024px) {
   .space-style {
-    padding: 0 4vw; }
+    padding: 0 6vw; }
   .container-header-hero .App-header {
     opacity: 1; }
     .container-header-hero .App-header .App-nav-links {
@@ -468,33 +465,34 @@ html {
         opacity: 0; }
       .container-header-hero .App-header .content-button-nav .close-icon.open {
         opacity: 1; }
-  .container-header-hero .App-hero .App-hero-content .App-hero-content-info-action .App-hero-info {
-    align-items: flex-start;
-    width: 40vw;
-    height: auto;
-    padding-top: 10vh; }
-  .container-header-hero .App-hero .App-hero-content .App-hero-content-info-action .App-action .content-button-contact {
-    padding-top: 5vh; }
-    .container-header-hero .App-hero .App-hero-content .App-hero-content-info-action .App-action .content-button-contact button {
-      padding: 2vh 4vw; }
-  .container-header-hero .App-hero .App-hero-content .App-hero-content-image .content-image {
-    transform: translateY(-110vh) translateX(15%);
-    padding-top: 0vh; }
-    .container-header-hero .App-hero .App-hero-content .App-hero-content-image .content-image img {
-      transform: scale(0.8); }
-  .container-header-hero .App-hero .App-hero-content .App-hero-content-scroll {
-    opacity: 1;
-    transform: scale(0.7); }
+  .container-header-hero .App-hero .App-hero-content {
+    display: flex;
+    padding-top: 3vh; }
+    .container-header-hero .App-hero .App-hero-content .App-hero-content-info-action {
+      width: 60%; }
+      .container-header-hero .App-hero .App-hero-content .App-hero-content-info-action .App-hero-info {
+        align-items: flex-start;
+        height: auto; }
+        .container-header-hero .App-hero .App-hero-content .App-hero-content-info-action .App-hero-info .App-info {
+          width: 80%; }
+      .container-header-hero .App-hero .App-hero-content .App-hero-content-info-action .App-action .content-button-contact {
+        padding-top: 5vh; }
+        .container-header-hero .App-hero .App-hero-content .App-hero-content-info-action .App-action .content-button-contact button {
+          padding: 2vh 4vw; }
+    .container-header-hero .App-hero .App-hero-content .App-hero-content-image {
+      opacity: 1; }
+    .container-header-hero .App-hero .App-hero-content .App-hero-content-scroll {
+      opacity: 1; }
   .App-about-me {
     padding: 40vh 0 60vh 0; }
-    .App-about-me .App-about-me-content .App-about-me-header .App-about-me-photo {
-      padding-top: 10vh; }
-      .App-about-me .App-about-me-content .App-about-me-header .App-about-me-photo img {
-        transform: scale(1) rotate(-25deg); }
-    .App-about-me .App-about-me-content .App-about-me-header .App-about-me-title {
-      text-align: end; }
+    .App-about-me .App-about-me-content .App-about-me-header {
+      justify-content: space-between; }
+      .App-about-me .App-about-me-content .App-about-me-header .App-about-me-photo {
+        transform: rotate(15deg); }
+      .App-about-me .App-about-me-content .App-about-me-header .App-about-me-title {
+        text-align: end; }
     .App-about-me .App-about-me-content .about-me-info {
-      padding: 10vh 25vw 10vh 2vw; }
+      padding: 10vh 6vw; }
       .App-about-me .App-about-me-content .about-me-info p {
         font-size: 18px; }
     .App-about-me .App-about-me-content .wrapper-title-portfolio .about-me-title-portfolio {
@@ -548,7 +546,7 @@ html {
     background-size: cover;
     background-repeat: no-repeat;
     color: #24423b;
-    padding: 10vh 0 0 0; }
+    padding: 20vh 0 0 0; }
     .wrapper-service-footer .App-service-content-title {
       text-align: center; }
       .wrapper-service-footer .App-service-content-title .service-content-title h1 {

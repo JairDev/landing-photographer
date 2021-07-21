@@ -133,9 +133,13 @@ html {
     height: calc(100vh - 3vh);
     padding-top: 2vh;
     & .App-hero-content {
+      // display: flex;
+      // flex-wrap: wrap;
       height: 100%;
+      padding-top: 4vh;
       position: relative;
       & .App-hero-content-info-action {
+        width: 100%;
         height: 100%;
         position: relative;
         z-index: 100;
@@ -190,15 +194,16 @@ html {
         }
       }
       & .App-hero-content-image {
+        opacity: 0;
         & .content-image {
-          height: 100vh;
+          // height: 100vh;
           width: 100%;
           position: relative;
-          transform: translateY(-90vh) translateX(15%);
-          padding-top: 30vh;
+          // transform: translateY(-90vh) translateX(15%);
+          // padding-top: 30vh;
           & img {
             width: 100%;
-            transform: scale(1.8);
+            // transform: scale(1.8);
           }
         }
       }
@@ -209,12 +214,12 @@ html {
         justify-content: center;
         align-items: center;
         position: absolute;
-        left: 0;
+        // left: 0;
         bottom: 10vh;
-        width: 150px;
-        height: 150px;
+        // width: 150px;
+        height: 80px;
         opacity: 0;
-        transform: rotate(-20px);
+        // transform: rotate(-20px);
         & img {
           width: 100%;
           height: 100%;
@@ -229,20 +234,25 @@ html {
 
 .App-about-me {
   background-color: map-get($colors, "complementary-light");
-  padding: 40vh 0 60vh 0;
+  padding: 30vh 0 60vh 0;
   & .App-about-me-content {
     & .App-about-me-header {
       display: flex;
-      flex-direction: column-reverse;
-
+      justify-content: center;      
+      flex-wrap: wrap;
       & .App-about-me-photo {
-        align-self: flex-start;
-        padding-top: 10vh;
-        transform: scale(0.8);
+        // align-self: flex-start;
+        // padding-top: 10vh;
+        // transform: scale(0.8);
+        padding-top: 15vh;
+        & img {
+          width: 100%;
+          height: 100%;
+        }
       }
 
       & .App-about-me-title {
-        text-align: end;
+        // text-align: end;
         & h1 {
           color: map-get($colors, "primary-text");
           font-size: map-get($font-size, "title");
@@ -286,6 +296,7 @@ html {
   }
 }
 //Portfolio///////////////
+$limit: 1;
 .App-portfolio {
   background-color: map-get($colors, "back-portfolio");
   & .App-portfolio-content-img-title {
@@ -333,6 +344,7 @@ html {
         transition: all linear .3s;
       }
     }
+
     & .portfolio-content-photos:hover {
       // border: 2px solid red;
       // transform: scale(1.5);
@@ -589,7 +601,7 @@ html {
 
 @media only screen and (min-width: 1024px) {
   .space-style {
-    padding: 0 4vw;
+    padding: 0 6vw;
   }
 
   //////////////
@@ -597,7 +609,6 @@ html {
   .container-header-hero {
     & .App-header {
       opacity: 1;
-
       .App-nav-links {
         display: flex;
         justify-content: center;
@@ -648,12 +659,18 @@ html {
     }
     & .App-hero {
       & .App-hero-content {
+        display: flex;
+        padding-top: 3vh;
         & .App-hero-content-info-action {
+          width: 60%;
           & .App-hero-info {
             align-items: flex-start;
-            width: 40vw;
+            // width: 40vw;
             height: auto;
-            padding-top: 10vh;
+            // padding-top: 10vh;
+            & .App-info {
+              width: 80%;
+            }
           }
 
           .App-action {
@@ -666,17 +683,18 @@ html {
           }
         }
         & .App-hero-content-image {
+          opacity: 1;
           & .content-image {
-            transform: translateY(-110vh) translateX(15%);
-            padding-top: 0vh;
+            // transform: translateY(-110vh) translateX(15%);
+            // padding-top: 0vh;
             & img {
-              transform: scale(0.8);
+              // transform: scale(0.8);
             }
           }
         }
         & .App-hero-content-scroll {
           opacity: 1;
-          transform: scale(.7);
+          // transform: scale(.7);
         }
       }
     }
@@ -688,10 +706,11 @@ html {
     padding: 40vh 0 60vh 0;
     & .App-about-me-content {
       & .App-about-me-header {
+        justify-content: space-between;
         & .App-about-me-photo {
-          padding-top: 10vh;
+          // padding-top: 10vh;
+          transform: rotate(15deg);
           & img {
-            transform: scale(1) rotate(-25deg);
           }
         }
         & .App-about-me-title {
@@ -699,7 +718,8 @@ html {
         }
       }
       & .about-me-info {
-        padding: 10vh 25vw 10vh 2vw;
+        // padding: 10vh 25vw 10vh 2vw;
+        padding: 10vh 6vw;
         & p {
           font-size: map-get($font-size, "main-font");
         }
@@ -734,6 +754,7 @@ html {
       width: 100%;
     }
   }
+
 
   .App-portfolio-content-photos {
     transform: scale(0.9);
@@ -789,7 +810,7 @@ html {
     background-size: cover;
     background-repeat: no-repeat;
     color: map-get($colors, "primary-text");
-    padding: 10vh 0 0 0;
+    padding: 20vh 0 0 0;
 
     .App-service-content-title {
       text-align: center;
